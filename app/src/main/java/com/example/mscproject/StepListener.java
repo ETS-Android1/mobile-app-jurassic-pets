@@ -1,8 +1,8 @@
 package com.example.mscproject;
-
-// Listens for alerts when steps are detected
+/*
+ Classes using this interface need to use the step attribute
+ StepListener class listens for alerts when steps are detected
+ */
 public interface StepListener {
-
-        public void step(long timeNs);
-
+        void step(long timeNs);
 }
