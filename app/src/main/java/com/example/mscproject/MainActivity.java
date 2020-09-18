@@ -11,10 +11,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
     //The steps are recorded and displayed to the user
-    public class MainActivity extends AppCompatActivity implements SensorEventListener, StepListener {
+    public class MainActivity extends AppCompatActivity implements SensorEventListener {
         private TextView tvView;
         private Button btnStart;
         private Button btnStop;
+        private TextView levelView;
 
         // uses the StepDetector class and creates a variable
         private StepDetector simpleStepDetector;
@@ -24,8 +25,20 @@ import android.os.Bundle;
         private Sensor accel;
         // a string displaying the number of steps made
         private static final String TEXT_NUM_STEPS = "Number of Steps: ";
-        // variable containing the number of steps
-        private int numSteps;
+
+        // New pet level info
+        private static final String TEXT_LEVEL = "Level: ";
+
+        private Pet myPet;
+
+        public MainActivity()
+        {
+            // Load the Pet from the Database
+            // Pet loadedPet = database.GetPet();
+            // myPet = loadedPet;
+
+            myPet = new Pet (0,"Fido");
+        }
 
         @Override
         // protected = can be called by any subclass within its class, but not by unrelated classes
@@ -39,19 +52,22 @@ import android.os.Bundle;
             accel = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
             // creates a new StepDetector object
             simpleStepDetector = new StepDetector();
-            simpleStepDetector.registerListener(this);
+
+            simpleStepDetector.registerListener(myPet);
 
             // findViewById is the reference to the id view in the layout
             tvView = findViewById(R.id.tv_steps);
             btnStart = findViewById(R.id.btn_start);
             btnStop = findViewById(R.id.btn_stop);
+            levelView = findViewById(R.id.pet_level);
 
             // when the user presses the start button this action occurs and starts the step counter
             btnStart.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View arg0) {
-                    numSteps = 0;
-                    tvView.setText("Hello");
+                    tvView.setText("Ready?" + myPet.getName());
+                    levelView.setText("Pets level: " + myPet.getLevel());
+                    
                     sensorManager.registerListener(MainActivity.this, accel, SensorManager.SENSOR_DELAY_FASTEST);
                 }
             });
@@ -77,13 +93,10 @@ import android.os.Bundle;
                 simpleStepDetector.updateAccel(
                         event.timestamp, event.values[0], event.values[1], event.values[2]);
             }
+
+            tvView.setText(TEXT_NUM_STEPS + myPet.getSteps());
+            levelView.setText(TEXT_LEVEL + myPet.getLevel());
         }
 
-        // method that displays the number of steps
-        @Override
-        public void step(long timeNs) {
-            numSteps++; // numSteps = numSteps + 1 ------ Ask Al --------------
-            tvView.setText(TEXT_NUM_STEPS + numSteps);
-        }
     }
 
