@@ -15,7 +15,7 @@ import android.os.Bundle;
         private TextView tvView;
         private Button btnStart;
         private Button btnStop;
-        private TextView levelView;
+        private TextView coinsView;
 
         // uses the StepDetector class and creates a variable
         private StepDetector simpleStepDetector;
@@ -27,7 +27,7 @@ import android.os.Bundle;
         private static final String TEXT_NUM_STEPS = "Number of Steps: ";
 
         // New pet level info
-        private static final String TEXT_LEVEL = "Level: ";
+        private static final String TEXT_COINS = "Coins: ";
 
         private Pet myPet;
 
@@ -59,14 +59,14 @@ import android.os.Bundle;
             tvView = findViewById(R.id.tv_steps);
             btnStart = findViewById(R.id.btn_start);
             btnStop = findViewById(R.id.btn_stop);
-            levelView = findViewById(R.id.pet_level);
+            coinsView = findViewById(R.id.pet_coins);
 
             // when the user presses the start button this action occurs and starts the step counter
             btnStart.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View arg0) {
                     tvView.setText("Ready?" + myPet.getName());
-                    levelView.setText("Pets level: " + myPet.getLevel());
+                    coinsView.setText("Pets coins: " + myPet.getCoins());
                     
                     sensorManager.registerListener(MainActivity.this, accel, SensorManager.SENSOR_DELAY_FASTEST);
                 }
@@ -95,7 +95,7 @@ import android.os.Bundle;
             }
 
             tvView.setText(TEXT_NUM_STEPS + myPet.getSteps());
-            levelView.setText(TEXT_LEVEL + myPet.getLevel());
+            coinsView.setText(TEXT_COINS + myPet.getCoins());
         }
 
     }
