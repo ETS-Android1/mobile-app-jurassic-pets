@@ -6,7 +6,7 @@ public class Item {
     private final String description;
     private int cost;
 
-    public Item (String name, String description, int cost, int quantity) {
+    public Item (String name, String description, int cost) {
         this.name = name;
         this.description = description;
         this.cost = cost;

@@ -1,5 +1,11 @@
 package com.example.mscproject;
 
+enum PetType {
+    Triceratops,
+    Trex,
+    Bronchiosaurus
+}
+
 public class Pet implements StepListener {
 
     private int level;
@@ -8,23 +14,20 @@ public class Pet implements StepListener {
     private int numSteps = 0;
 
     private String petName;
-    private String petType;
+    private PetType petType;
     private String petDescription;
 
     // Constructor for objects of class Pet
-    public Pet(int coins, String name) {
-        petName = name;
+    public Pet(int coins, String name, PetType petType) {
+        this.petName = name;
+        this.petType = petType;
     }
 
     public String getName() {
         return petName;
     }
 
-    public String setName() { return petName; }
-
-    public String getType() { return petType; }
-
-    public String setType() { return petType; }
+    public PetType getType() { return petType; }
 
     public int getLevel() { return level; }
 

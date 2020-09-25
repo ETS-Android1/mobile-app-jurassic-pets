@@ -28,7 +28,7 @@ public class PetTest {
     @Test
     public void step(){
 
-        Pet pet = new Pet(0, "Fido");
+        Pet pet = new Pet(0, "Fido", PetType.Bronchiosaurus);
 
         Date date = new Date();
         long timestamp = date.getTime();

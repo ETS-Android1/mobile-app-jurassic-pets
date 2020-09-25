@@ -37,7 +37,7 @@ import android.os.Bundle;
             // Pet loadedPet = database.GetPet();
             // myPet = loadedPet;
 
-            myPet = new Pet (0,"Fido");
+            myPet = new Pet (0,"Fido", PetType.Bronchiosaurus);
         }
 
         @Override
