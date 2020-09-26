@@ -3,4 +3,11 @@
     <string name="start_pedometer">Start Pedometer</string>
     <string name="pet_level">Pet level:</string>
     <string name="stop_pedometer">Stop Pedometer</string>
+    <string name="title_screen">Jurrasic Pets</string>
+    <string name="btn_start">START</string>
+    <string name="btn_help">HELP</string>
+    <string name="btn_about">ABOUT</string>
+    <string name="bront">bront</string>
+    <string name="trex">trex</string>
+    <string name="tri">tri</string>
 </resources>
