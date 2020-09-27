@@ -13,4 +13,5 @@
     <string name="header_image">Header image</string>
     <string name="three_pets_image">Three pets image</string>
     <string name="egg_image">egg image</string>
+    <string name="image_of_the_pet">Image of the pet</string>
 </resources>
