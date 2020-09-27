@@ -28,8 +28,8 @@
             android:layout_height="171dp" android:id="@+id/btn_tri"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toBottomOf="@+id/btn_trex"
-            android:layout_marginTop="44dp" app:layout_constraintHorizontal_bias="0.501"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.143"
+            android:layout_marginTop="44dp"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.0"
             android:contentDescription="@string/tri" android:scaleType="fitCenter"
             android:background="@null" app:srcCompat="@drawable/char_select_03"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

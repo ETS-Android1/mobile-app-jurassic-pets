@@ -6,6 +6,7 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,6 +17,7 @@ import android.os.Bundle;
         private Button btnStart;
         private Button btnStop;
         private TextView coinsView;
+        private ImageView ivPet;
 
         // uses the StepDetector class and creates a variable
         private StepDetector simpleStepDetector;
@@ -46,7 +48,8 @@ import android.os.Bundle;
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState); // super refers to the base class of savedInstanceState
             setContentView(R.layout.activity_main);
-
+            ivPet = findViewById(R.id.petImageView);
+            ivPet.setImageResource(R.drawable.char_sleep_01);
             // Get an instance of the SensorManager
             sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
             accel = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
@@ -67,7 +70,8 @@ import android.os.Bundle;
                 public void onClick(View arg0) {
                     tvView.setText("Ready?" + myPet.getName());
                     coinsView.setText("Pets coins: " + myPet.getCoins());
-                    
+                    ivPet.setImageResource(R.drawable.char_main_01);
+
                     sensorManager.registerListener(MainActivity.this, accel, SensorManager.SENSOR_DELAY_FASTEST);
                 }
             });
