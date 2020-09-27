@@ -3,47 +3,81 @@
                                                    xmlns:app="http://schemas.android.com/apk/res-auto"
                                                    android:layout_width="match_parent"
                                                    android:layout_height="match_parent"
-                                                   android:background="@drawable/bg_title">
+                                                   android:background="@android:color/white"
+>
+    <ImageView
+            android:layout_width="420dp"
+            android:layout_height="143dp" app:srcCompat="@drawable/bg_header" android:id="@+id/bg_header2"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintBottom_toTopOf="@+id/title"
+            app:layout_constraintHorizontal_bias="1.0" app:layout_constraintVertical_bias="1.0"
+            android:scaleType="fitXY" android:contentDescription="@string/header_image"/>
+
     <TextView
             android:text="@string/title_screen"
-            android:layout_width="329dp"
-            android:layout_height="55dp" android:id="@+id/title"
+            android:layout_width="362dp"
+            android:layout_height="56dp" android:id="@+id/title"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:fontFamily="@font/bungee"
-            app:layout_constraintVertical_bias="0.316" android:textSize="38sp" android:textColor="#FABE0C"
-    />
+            app:layout_constraintVertical_bias="0.2" android:textSize="42sp" android:textColor="#FABE0C"
+            app:layout_constraintHorizontal_bias="0.489"/>
     <Button
             android:text="@string/btn_help"
             android:layout_width="97dp"
             android:layout_height="41dp" android:id="@+id/btn_help"
             app:layout_constraintTop_toBottomOf="@+id/btn_start"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintVertical_bias="0.09"
-            android:background="@drawable/rounded_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintVertical_bias="0.612"
+            android:background="@drawable/btn_round"
             android:textColor="@android:color/white" android:textSize="16sp"
-            app:layout_constraintStart_toEndOf="@+id/btn_about" app:layout_constraintHorizontal_bias="0.296"
-            style="@style/Widget.AppCompat.Button" android:fontFamily="@font/bungee"/>
+            app:layout_constraintStart_toEndOf="@+id/btn_about" app:layout_constraintHorizontal_bias="0.758"
+            style="@style/Widget.AppCompat.Button.Borderless" android:fontFamily="@font/bungee"
+            app:layout_constraintBottom_toTopOf="@+id/bg_header3"/>
     <Button
             android:text="@string/btn_about"
-            android:layout_width="94dp"
-            android:layout_height="43dp" android:id="@+id/btn_about"
+            android:layout_width="97dp"
+            android:layout_height="41dp" android:id="@+id/btn_about"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/btn_start"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias="0.091"
-            android:background="@drawable/rounded_button"
+            app:layout_constraintVertical_bias="0.612"
+            android:background="@drawable/btn_round"
             android:textColor="@android:color/white" android:textSize="16sp" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.29" android:fontFamily="@font/bungee"/>
+            app:layout_constraintHorizontal_bias="0.111"
+            style="@style/Widget.AppCompat.Button.Borderless" android:fontFamily="@font/bungee"
+            app:layout_constraintBottom_toTopOf="@+id/bg_header3"/>
     <Button
             android:text="@string/btn_start"
-            android:layout_width="106dp"
-            android:layout_height="53dp" android:id="@+id/btn_start"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/title" app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias="0.094"
-            android:background="@drawable/rounded_button"
+            android:layout_width="128dp"
+            android:layout_height="50dp" android:id="@+id/btn_start"
+            android:background="@drawable/btn_round"
             android:textColor="@android:color/white" android:textSize="22sp"
-            android:fontFamily="@font/bungee"/>
+            style="@style/Widget.AppCompat.Button.Borderless" android:fontFamily="@font/bungee"
+            app:layout_constraintTop_toBottomOf="@+id/imageView2"
+            app:layout_constraintBottom_toTopOf="@+id/bg_header3" app:layout_constraintVertical_bias="0.202"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"/>
+    <ImageView
+            android:layout_width="412dp"
+            android:layout_height="191dp" app:srcCompat="@drawable/bg_title_main" android:id="@+id/imageView2"
+            android:contentDescription="@string/three_pets_image"
+            android:scaleType="fitXY"
+            app:layout_constraintTop_toBottomOf="@+id/title" app:layout_constraintBottom_toTopOf="@+id/bg_header3"
+            app:layout_constraintVertical_bias="0.075" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ImageView
+            android:layout_width="70dp"
+            android:layout_height="79dp" app:srcCompat="@drawable/bg_egg" android:id="@+id/imageView5"
+            app:layout_constraintBottom_toTopOf="@+id/bg_header3" app:layout_constraintEnd_toStartOf="@+id/btn_help"
+            app:layout_constraintStart_toEndOf="@+id/btn_about" app:layout_constraintTop_toBottomOf="@+id/btn_start"
+            app:layout_constraintVertical_bias="0.605" android:contentDescription="@string/egg_image"/>
+
+    <ImageView
+            android:layout_width="423dp"
+            android:layout_height="162dp" app:srcCompat="@drawable/bg_header_flipped" android:id="@+id/bg_header3"
+            android:scaleType="fitXY" android:contentDescription="@string/header_image"
+            app:layout_constraintTop_toTopOf="@+id/bg_header2"
+            android:layout_marginTop="576dp" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

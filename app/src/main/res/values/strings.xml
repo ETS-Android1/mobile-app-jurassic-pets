@@ -10,4 +10,7 @@
     <string name="bront">bront</string>
     <string name="trex">trex</string>
     <string name="tri">tri</string>
+    <string name="header_image">Header image</string>
+    <string name="three_pets_image">Three pets image</string>
+    <string name="egg_image">egg image</string>
 </resources>
