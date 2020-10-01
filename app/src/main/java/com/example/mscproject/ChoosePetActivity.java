@@ -16,10 +16,10 @@ public class ChoosePetActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_pet);
 
+
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Context = ChoosePetActivity class, to open MainActivity class
                 Intent launchMainActivity = new Intent(ChoosePetActivity.this, MainActivity.class);
                 launchMainActivity.putExtra("PET_TYPE", PetType.Bronchiosaurus);
                 startActivity(launchMainActivity);
@@ -29,10 +29,10 @@ public class ChoosePetActivity extends AppCompatActivity {
         ImageButton btn = findViewById(R.id.btn_bront);
         btn.setOnClickListener(listener);
 
+
         View.OnClickListener listener2 = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Context = ChoosePetActivity class, to open MainActivity class
                 Intent launchMainActivity = new Intent(ChoosePetActivity.this, MainActivity.class);
                 launchMainActivity.putExtra("PET_TYPE", PetType.Trex);
                 startActivity(launchMainActivity);
@@ -46,7 +46,6 @@ public class ChoosePetActivity extends AppCompatActivity {
         View.OnClickListener listener3 = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Context = ChoosePetActivity class, to open MainActivity class
                 Intent launchMainActivity = new Intent(ChoosePetActivity.this, MainActivity.class);
                 launchMainActivity.putExtra("PET_TYPE", PetType.Triceratops);
                 startActivity(launchMainActivity);

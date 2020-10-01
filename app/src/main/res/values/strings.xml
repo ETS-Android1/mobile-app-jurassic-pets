@@ -1,9 +1,9 @@
 <resources>
-    <string name="app_name">MSc Project</string>
+    <string name="app_name">Jurassic Pets</string>
     <string name="start_pedometer">Wake up</string>
     <string name="pet_level">Pet level:</string>
     <string name="stop_pedometer">Stop Pedometer</string>
-    <string name="title_screen">Jurrasic Pets</string>
+    <string name="title_screen">Jurassic Pets</string>
     <string name="btn_start">START</string>
     <string name="btn_help">HELP</string>
     <string name="btn_about">ABOUT</string>
