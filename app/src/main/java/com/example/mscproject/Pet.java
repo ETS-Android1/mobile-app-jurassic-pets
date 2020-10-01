@@ -29,6 +29,8 @@ public class Pet implements StepListener {
 
     public int getLevel() { return level; }
 
+    public PetType getPetType() { return petType; }
+
     public int getCoins() { return coins; }
 
     public int getSteps() {return numSteps; }

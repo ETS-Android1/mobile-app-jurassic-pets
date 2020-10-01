@@ -3,7 +3,8 @@
                                                    xmlns:app="http://schemas.android.com/apk/res-auto"
                                                    android:gravity="center"
                                                    android:layout_width="match_parent"
-                                                   android:layout_height="match_parent" android:id="@+id/linearLayout">
+                                                   android:layout_height="match_parent" android:id="@+id/linearLayout"
+                                                   android:background="#FFFFFF">
 
     <TextView
             android:id="@+id/tv_steps"
@@ -44,6 +45,12 @@
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toTopOf="@+id/tv_steps"
             app:layout_constraintHorizontal_bias="0.498" app:layout_constraintVertical_bias="0.918"
             android:contentDescription="@string/image_of_the_pet"/>
+    <TextView
+            android:layout_width="131dp"
+            android:layout_height="19dp" android:id="@+id/tvLevel"
+            app:layout_constraintTop_toBottomOf="@+id/pet_coins"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintVertical_bias="0.064"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,33 +3,34 @@
                                                    xmlns:app="http://schemas.android.com/apk/res-auto"
                                                    android:layout_width="match_parent"
                                                    android:layout_height="match_parent"
-                                                   android:background="@drawable/bg_select">
+                                                   android:background="#FFECDE">
 
 
     <ImageButton
-            android:layout_width="127dp"
-            android:layout_height="171dp" app:srcCompat="@drawable/char_select_01" android:id="@+id/btn_bront"
+            android:layout_width="107dp"
+            android:layout_height="151dp" app:srcCompat="@drawable/char_select_01" android:id="@+id/btn_bront"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/btn_trex" android:contentDescription="@string/bront"
+            android:contentDescription="@string/bront"
             android:scaleType="fitCenter"
-            android:background="@null"/>
+            android:background="@null" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.105"/>
     <ImageButton
-            android:layout_width="127dp"
-            android:layout_height="171dp" app:srcCompat="@drawable/char_select_02" android:id="@+id/btn_trex"
+            android:layout_width="107dp"
+            android:layout_height="151dp" app:srcCompat="@drawable/char_select_02" android:id="@+id/btn_trex"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/trex"
+            android:scaleType="fitCenter"
+            android:background="@null"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.46"/>
+    <ImageButton
+            android:layout_width="107dp"
+            android:layout_height="151dp" android:id="@+id/btn_tri"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias="0.451" android:contentDescription="@string/trex"
-            android:scaleType="fitCenter"
-            android:background="@null"/>
-    <ImageButton
-            android:layout_width="127dp"
-            android:layout_height="171dp" android:id="@+id/btn_tri"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toBottomOf="@+id/btn_trex"
-            android:layout_marginTop="44dp"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.0"
             android:contentDescription="@string/tri" android:scaleType="fitCenter"
-            android:background="@null" app:srcCompat="@drawable/char_select_03"/>
+            android:background="@null" app:srcCompat="@drawable/char_select_03"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_bias="0.821"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

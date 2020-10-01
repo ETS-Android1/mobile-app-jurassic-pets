@@ -13,11 +13,12 @@ import android.os.Bundle;
 
     //The steps are recorded and displayed to the user
     public class MainActivity extends AppCompatActivity implements SensorEventListener {
-        private TextView tvView;
+        private TextView tvSteps;
         private Button btnStart;
         private Button btnStop;
-        private TextView coinsView;
+        private TextView tvCoins;
         private ImageView ivPet;
+        //private TextView tvLevel;
 
         // uses the StepDetector class and creates a variable
         private StepDetector simpleStepDetector;
@@ -30,6 +31,7 @@ import android.os.Bundle;
 
         // New pet level info
         private static final String TEXT_COINS = "Coins: ";
+        //private static final String TEXT_LEVEL = "Level: ";
 
         private Pet myPet;
 
@@ -48,6 +50,16 @@ import android.os.Bundle;
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState); // super refers to the base class of savedInstanceState
             setContentView(R.layout.activity_main);
+
+            /*
+            Intent intent = getIntent();
+            PetType.Bronchiosaurus = intent.get()
+
+            PetType petType = getIntent().getPetType(petType, 1);
+
+            */
+
+            //Add logic to this once intent is added (if specific type then change image...)
             ivPet = findViewById(R.id.petImageView);
             ivPet.setImageResource(R.drawable.char_sleep_01);
             // Get an instance of the SensorManager
@@ -58,18 +70,19 @@ import android.os.Bundle;
 
             simpleStepDetector.registerListener(myPet);
 
+
             // findViewById is the reference to the id view in the layout
-            tvView = findViewById(R.id.tv_steps);
+            tvSteps = findViewById(R.id.tv_steps);
             btnStart = findViewById(R.id.btn_start);
             btnStop = findViewById(R.id.btn_stop);
-            coinsView = findViewById(R.id.pet_coins);
+            tvCoins = findViewById(R.id.pet_coins);
 
             // when the user presses the start button this action occurs and starts the step counter
             btnStart.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View arg0) {
-                    tvView.setText("Ready?" + myPet.getName());
-                    coinsView.setText("Pets coins: " + myPet.getCoins());
+                    tvSteps.setText("Ready?" + myPet.getName());
+                    tvCoins.setText("Pets coins: " + myPet.getCoins());
                     ivPet.setImageResource(R.drawable.char_main_01);
 
                     sensorManager.registerListener(MainActivity.this, accel, SensorManager.SENSOR_DELAY_FASTEST);
@@ -98,8 +111,8 @@ import android.os.Bundle;
                         event.timestamp, event.values[0], event.values[1], event.values[2]);
             }
 
-            tvView.setText(TEXT_NUM_STEPS + myPet.getSteps());
-            coinsView.setText(TEXT_COINS + myPet.getCoins());
+            tvSteps.setText(TEXT_NUM_STEPS + myPet.getSteps());
+            tvCoins.setText(TEXT_COINS + myPet.getCoins());
         }
 
     }
