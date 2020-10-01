@@ -21,7 +21,7 @@ public class ChoosePetActivity extends AppCompatActivity {
             public void onClick(View view) {
                 //Context = ChoosePetActivity class, to open MainActivity class
                 Intent launchMainActivity = new Intent(ChoosePetActivity.this, MainActivity.class);
-                launchMainActivity.putExtra("petType", PetType.Bronchiosaurus);
+                launchMainActivity.putExtra("PET_TYPE", PetType.Bronchiosaurus);
                 startActivity(launchMainActivity);
             }
         };
@@ -34,7 +34,7 @@ public class ChoosePetActivity extends AppCompatActivity {
             public void onClick(View view) {
                 //Context = ChoosePetActivity class, to open MainActivity class
                 Intent launchMainActivity = new Intent(ChoosePetActivity.this, MainActivity.class);
-                launchMainActivity.putExtra("petType", PetType.Trex);
+                launchMainActivity.putExtra("PET_TYPE", PetType.Trex);
                 startActivity(launchMainActivity);
             }
         };
@@ -48,7 +48,7 @@ public class ChoosePetActivity extends AppCompatActivity {
             public void onClick(View view) {
                 //Context = ChoosePetActivity class, to open MainActivity class
                 Intent launchMainActivity = new Intent(ChoosePetActivity.this, MainActivity.class);
-                launchMainActivity.putExtra("petType", PetType.Triceratops);
+                launchMainActivity.putExtra("PET_TYPE", PetType.Triceratops);
                 startActivity(launchMainActivity);
             }
         };

@@ -1,5 +1,6 @@
 package com.example.mscproject;
 
+import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -11,7 +12,9 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
-    //The steps are recorded and displayed to the user
+import java.io.Serializable;
+
+//The steps are recorded and displayed to the user
     public class MainActivity extends AppCompatActivity implements SensorEventListener {
         private TextView tvSteps;
         private Button btnStart;
@@ -35,15 +38,6 @@ import android.os.Bundle;
 
         private Pet myPet;
 
-        public MainActivity()
-        {
-            // Load the Pet from the Database
-            // Pet loadedPet = database.GetPet();
-            // myPet = loadedPet;
-
-            myPet = new Pet (0,"Fido", PetType.Bronchiosaurus);
-        }
-
         @Override
         // protected = can be called by any subclass within its class, but not by unrelated classes
         // Bundle = are generally used for passing data between various Android activities
@@ -51,17 +45,27 @@ import android.os.Bundle;
             super.onCreate(savedInstanceState); // super refers to the base class of savedInstanceState
             setContentView(R.layout.activity_main);
 
-            /*
+
             Intent intent = getIntent();
-            PetType.Bronchiosaurus = intent.get()
+            PetType petType = (PetType)intent.getSerializableExtra("PET_TYPE");
 
-            PetType petType = getIntent().getPetType(petType, 1);
+            myPet = new Pet (0,"Fido", petType);
 
-            */
 
             //Add logic to this once intent is added (if specific type then change image...)
             ivPet = findViewById(R.id.petImageView);
-            ivPet.setImageResource(R.drawable.char_sleep_01);
+            switch (myPet.getPetType()) {
+                case Bronchiosaurus:
+                    ivPet.setImageResource(R.drawable.char_sleep_01);
+                    break;
+                case Trex:
+                    ivPet.setImageResource(R.drawable.char_sleep_02);
+                    break;
+                case Triceratops:
+                    ivPet.setImageResource(R.drawable.char_sleep_03);
+                    break;
+            }
+
             // Get an instance of the SensorManager
             sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
             accel = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
@@ -83,7 +87,18 @@ import android.os.Bundle;
                 public void onClick(View arg0) {
                     tvSteps.setText("Ready?" + myPet.getName());
                     tvCoins.setText("Pets coins: " + myPet.getCoins());
-                    ivPet.setImageResource(R.drawable.char_main_01);
+
+                    switch (myPet.getPetType()) {
+                        case Bronchiosaurus:
+                            ivPet.setImageResource(R.drawable.char_main_01);
+                            break;
+                        case Trex:
+                            ivPet.setImageResource(R.drawable.char_main_02);
+                            break;
+                        case Triceratops:
+                            ivPet.setImageResource(R.drawable.char_main_03);
+                            break;
+                    }
 
                     sensorManager.registerListener(MainActivity.this, accel, SensorManager.SENSOR_DELAY_FASTEST);
                 }
