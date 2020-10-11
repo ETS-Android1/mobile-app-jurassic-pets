@@ -1,5 +1,14 @@
 package com.example.mscproject;
 
+/*
+Title: Create a Simple Pedometer and Step Counter in Android
+Author: Pillai, A
+Date: 2017
+Code version: 2.0
+Available at: http://www.gadgetsaint.com/android/create-pedometer-step-counter-android/#.X3gxH2hKiUm
+*/
+
+
 // This class determines what is counted as a step being recorded
 public class SensorFilter {
 
@@ -46,12 +55,12 @@ public class SensorFilter {
         public static float[] normalize(float[] a) {
             // declare a new retval array object with the length of 'a'
             float[] retval = new float[a.length];
-            float norm = norm(a); //-----------------------ASK AL-------------------------
+            float norm = norm(a);
             // iterate through each value in the array
             for (int i = 0; i < a.length; i++) {
-                retval[i] = a[i] / norm; //-----------------------ASK AL-------------------------
+                retval[i] = a[i] / norm;
             }
-            return retval; //returns the value for retval
+            return retval;
         }
 
 }

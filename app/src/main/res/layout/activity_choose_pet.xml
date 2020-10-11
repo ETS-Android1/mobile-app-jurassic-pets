@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
                                                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   xmlns:tools="http://schemas.android.com/tools"
                                                    android:layout_width="match_parent"
                                                    android:layout_height="match_parent"
                                                    android:background="#FFECDE">
@@ -9,28 +10,91 @@
     <ImageButton
             android:layout_width="107dp"
             android:layout_height="151dp" app:srcCompat="@drawable/char_select_01" android:id="@+id/btn_bront"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent"
             android:contentDescription="@string/bront"
             android:scaleType="fitCenter"
-            android:background="@null" app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias="0.105"/>
+            android:background="@null"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btn_trex" app:layout_constraintHorizontal_bias="0.533"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.394"/>
     <ImageButton
             android:layout_width="107dp"
             android:layout_height="151dp" app:srcCompat="@drawable/char_select_02" android:id="@+id/btn_trex"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent"
             android:contentDescription="@string/trex"
             android:scaleType="fitCenter"
             android:background="@null"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.46"/>
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="136dp" app:layout_constraintEnd_toStartOf="@+id/btn_tri"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHorizontal_bias="0.053" app:layout_constraintVertical_bias="0.394"
+            app:layout_constraintEnd_toEndOf="parent"/>
     <ImageButton
             android:layout_width="107dp"
             android:layout_height="151dp" android:id="@+id/btn_tri"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
             android:contentDescription="@string/tri" android:scaleType="fitCenter"
             android:background="@null" app:srcCompat="@drawable/char_select_03"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_bias="0.821"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.878"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.394"/>
+
+    <EditText
+            android:layout_width="174dp"
+            android:layout_height="39dp"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/et_inputName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.186"
+            android:hint="@string/name_your_pet" android:importantForAutofill="no"
+            app:layout_constraintHorizontal_bias="0.451"/>
+    <Button
+            android:text="@string/choose_btn_nextPage"
+            android:layout_width="124dp"
+            android:layout_height="49dp" android:id="@+id/btnSubmit"
+            android:background="@drawable/btn_round"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:fontFamily="@font/bungee"
+            android:textAlignment="center"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup"/>
+    <RadioGroup
+            android:layout_width="152dp"
+            android:layout_height="97dp"
+            android:id="@+id/radioGroup"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_bront"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintBottom_toTopOf="@+id/btnSubmit">
+        <RadioButton
+                android:text="@string/brontasaurus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/rdo_bront"
+                tools:layout_editor_absoluteY="454dp"
+                tools:layout_editor_absoluteX="174dp"
+                android:onClick="onDinoClick"/>
+        <RadioButton
+                android:text="@string/trex2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/rdo_trex"
+                tools:layout_editor_absoluteY="496dp"
+                tools:layout_editor_absoluteX="173dp"
+                android:onClick="onDinoClick"/>
+        <RadioButton
+                android:text="@string/triceratops"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/rdo_tri"
+                tools:layout_editor_absoluteY="542dp"
+                tools:layout_editor_absoluteX="174dp"
+                android:onClick="onDinoClick"/>
+    </RadioGroup>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

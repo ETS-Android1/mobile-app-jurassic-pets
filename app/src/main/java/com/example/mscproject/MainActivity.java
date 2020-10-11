@@ -10,12 +10,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import java.io.Serializable;
 
     public class MainActivity extends AppCompatActivity implements SensorEventListener {
         private TextView tvSteps;
-        private Button btnStart;
-        private Button btnStop;
         private TextView tvCoins;
         private ImageView ivPet;
 
@@ -33,9 +30,9 @@ import java.io.Serializable;
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_main);
             Intent intent = getIntent();
-            PetType petType = (PetType)intent.getSerializableExtra("PET_TYPE");
+            PetType petType = (PetType) intent.getSerializableExtra("PET_TYPE");
 
-            myPet = new Pet (0,"Fido", petType);
+            myPet = new Pet(0, "Fido", petType);
 
             ivPet = findViewById(R.id.petImageView);
 
@@ -60,8 +57,8 @@ import java.io.Serializable;
 
             // findViewById is the reference to the id view in the layout
             tvSteps = findViewById(R.id.tv_steps);
-            btnStart = findViewById(R.id.btn_start);
-            btnStop = findViewById(R.id.btn_stop);
+            Button btnStart = findViewById(R.id.btn_start);
+            Button btnStop = findViewById(R.id.btn_stop);
             tvCoins = findViewById(R.id.pet_coins);
 
             // When the 'Wake up' button is pressed
@@ -86,7 +83,7 @@ import java.io.Serializable;
                 }
             });
 
-            // When the 'Stop' button is pressed
+            //When the 'Stop' button is pressed
             btnStop.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View arg0) {
@@ -111,4 +108,6 @@ import java.io.Serializable;
         }
 
     }
+
+
 

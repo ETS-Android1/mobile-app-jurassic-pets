@@ -7,7 +7,7 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class HomeActivity extends AppCompatActivity {
-    private View.OnClickListener choosePet = new View.OnClickListener() {
+    private final View.OnClickListener choosePet = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
             Intent choosePetActivity = new Intent(HomeActivity.this, ChoosePetActivity.class);

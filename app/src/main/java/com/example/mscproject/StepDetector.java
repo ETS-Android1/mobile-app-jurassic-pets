@@ -1,5 +1,13 @@
 package com.example.mscproject;
 
+/*
+Title: Create a Simple Pedometer and Step Counter in Android
+Author: Pillai, A
+Date: 2017
+Code version: 2.0
+Available at: http://www.gadgetsaint.com/android/create-pedometer-step-counter-android/#.X3gxH2hKiUm
+*/
+
 // This class receives updates from the accelerometer sensor to detect steps
 public class StepDetector {
 
@@ -68,7 +76,6 @@ public class StepDetector {
         worldZ[1] = worldZ[1] / normalization_factor;
         worldZ[2] = worldZ[2] / normalization_factor;
 
-        // float variable
         float currentZ = SensorFilter.dot(worldZ, currentAccel) - normalization_factor; // ------ ASK AL -------------
 
         // accelRingCounter = accelRingCounter + 1
@@ -76,7 +83,6 @@ public class StepDetector {
         // velRing array = divides 'velRingCounter' by 'VEL_RING_SIZE' and returns remainder to currentZ
         velRing[velRingCounter % VEL_RING_SIZE] = currentZ;
 
-        // variable ----------
         float velocityEstimate = SensorFilter.sum(velRing);
 
         /* if the 'velocityEstimate' is greater than the 'STEP_THRESHOLD'
@@ -85,7 +91,6 @@ public class StepDetector {
          */
         if (velocityEstimate > STEP_THRESHOLD && oldVelocityEstimate <= STEP_THRESHOLD
                 && (timeNs - lastStepTimeNs > STEP_DELAY_NS)) {
-            // ---------------------------
             listener.step(timeNs);
             lastStepTimeNs = timeNs;
         }

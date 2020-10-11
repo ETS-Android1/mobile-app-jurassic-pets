@@ -41,7 +41,7 @@ public class Pet implements StepListener {
         numSteps++;
         if (numSteps >= dailyTarget) {
             coins = coins + 100;
-            numSteps = 0;
+            //numSteps = 0;
         }
     }
 }
