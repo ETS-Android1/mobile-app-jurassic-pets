@@ -39,11 +39,11 @@
             app:layout_constraintVertical_bias="0.394"/>
 
     <EditText
+            android:id="@+id/et_inputName"
             android:layout_width="174dp"
             android:layout_height="39dp"
             android:inputType="textPersonName"
             android:ems="10"
-            android:id="@+id/et_inputName"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.186"
@@ -52,7 +52,8 @@
     <Button
             android:text="@string/choose_btn_nextPage"
             android:layout_width="124dp"
-            android:layout_height="49dp" android:id="@+id/btnSubmit"
+            android:layout_height="49dp"
+            android:id="@+id/btnSubmit"
             android:background="@drawable/btn_round"
             android:textColor="@android:color/white"
             android:textSize="18sp"
@@ -78,7 +79,7 @@
                 android:id="@+id/rdo_bront"
                 tools:layout_editor_absoluteY="454dp"
                 tools:layout_editor_absoluteX="174dp"
-                android:onClick="onDinoClick"/>
+                android:onClick="onPetClick"/>
         <RadioButton
                 android:text="@string/trex2"
                 android:layout_width="wrap_content"
@@ -86,7 +87,7 @@
                 android:id="@+id/rdo_trex"
                 tools:layout_editor_absoluteY="496dp"
                 tools:layout_editor_absoluteX="173dp"
-                android:onClick="onDinoClick"/>
+                android:onClick="onPetClick"/>
         <RadioButton
                 android:text="@string/triceratops"
                 android:layout_width="wrap_content"
@@ -94,7 +95,7 @@
                 android:id="@+id/rdo_tri"
                 tools:layout_editor_absoluteY="542dp"
                 tools:layout_editor_absoluteX="174dp"
-                android:onClick="onDinoClick"/>
+                android:onClick="onPetClick"/>
     </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

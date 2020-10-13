@@ -15,7 +15,7 @@ public class Pet implements StepListener {
 
     private String petName;
     private PetType petType;
-    private String petDescription;
+    //private String petDescription;
 
     // Constructor for objects of class Pet
     public Pet(int coins, String name, PetType petType) {
@@ -29,7 +29,7 @@ public class Pet implements StepListener {
 
     public int getLevel() { return level; }
 
-    public PetType getPetType() { return petType; }
+    public PetType getType() { return petType; }
 
     public int getCoins() { return coins; }
 

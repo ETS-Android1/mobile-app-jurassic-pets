@@ -13,6 +13,7 @@ import android.os.Bundle;
 
     public class MainActivity extends AppCompatActivity implements SensorEventListener {
         private TextView tvSteps;
+        private TextView tvName;
         private TextView tvCoins;
         private ImageView ivPet;
 
@@ -20,6 +21,7 @@ import android.os.Bundle;
         private SensorManager sensorManager;
         private Sensor accel;
 
+        private static final String TEXT_NAME = "Dino name: ";
         private static final String TEXT_NUM_STEPS = "Number of Steps: ";
         private static final String TEXT_COINS = "Coins: ";
 
@@ -29,14 +31,16 @@ import android.os.Bundle;
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_main);
+
             Intent intent = getIntent();
+            String petName = (String) intent.getSerializableExtra("PET_NAME");
             PetType petType = (PetType) intent.getSerializableExtra("PET_TYPE");
 
-            myPet = new Pet(0, "Fido", petType);
+            myPet = new Pet(0, petName, petType);
 
             ivPet = findViewById(R.id.petImageView);
 
-            switch (myPet.getPetType()) {
+            switch (myPet.getType()) {
                 case Bronchiosaurus:
                     ivPet.setImageResource(R.drawable.char_sleep_01);
                     break;
@@ -55,20 +59,23 @@ import android.os.Bundle;
             simpleStepDetector = new StepDetector();
             simpleStepDetector.registerListener(myPet);
 
-            // findViewById is the reference to the id view in the layout
+            tvName = findViewById(R.id.tv_name);
             tvSteps = findViewById(R.id.tv_steps);
+            tvCoins = findViewById(R.id.pet_coins);
+
             Button btnStart = findViewById(R.id.btn_start);
             Button btnStop = findViewById(R.id.btn_stop);
-            tvCoins = findViewById(R.id.pet_coins);
+
+            tvName.setText(TEXT_NAME + myPet.getName());
 
             // When the 'Wake up' button is pressed
             btnStart.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View arg0) {
-                    tvSteps.setText("Ready?" + myPet.getName());
-                    tvCoins.setText("Pets coins: " + myPet.getCoins());
+                    tvSteps.setText("Ready?" + myPet.getName()); //may be able to remove this
+                    tvCoins.setText("Pets coins: " + myPet.getCoins()); //may be able to remove this
 
-                    switch (myPet.getPetType()) {
+                    switch (myPet.getType()) {
                         case Bronchiosaurus:
                             ivPet.setImageResource(R.drawable.char_main_01);
                             break;
