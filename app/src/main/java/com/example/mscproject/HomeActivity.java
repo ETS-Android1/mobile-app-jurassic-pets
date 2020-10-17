@@ -21,7 +21,7 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_screen);
 
-       Button startBtn = findViewById(R.id.btn_start);
+       Button startBtn = findViewById(R.id.home_btn_start);
         startBtn.setOnClickListener(choosePet);
 
     }

@@ -36,9 +36,9 @@ import android.os.Bundle;
             String petName = (String) intent.getSerializableExtra("PET_NAME");
             PetType petType = (PetType) intent.getSerializableExtra("PET_TYPE");
 
-            myPet = new Pet(0, petName, petType);
+            myPet = new Pet(0, petName, petType, null);
 
-            ivPet = findViewById(R.id.petImageView);
+            ivPet = findViewById(R.id.main_iv_pet);
 
             switch (myPet.getType()) {
                 case Bronchiosaurus:
@@ -59,12 +59,12 @@ import android.os.Bundle;
             simpleStepDetector = new StepDetector();
             simpleStepDetector.registerListener(myPet);
 
-            tvName = findViewById(R.id.tv_name);
-            tvSteps = findViewById(R.id.tv_steps);
-            tvCoins = findViewById(R.id.pet_coins);
+            tvName = findViewById(R.id.main_tv_name);
+            tvSteps = findViewById(R.id.main_tv_steps);
+            tvCoins = findViewById(R.id.main_tv_coins);
 
-            Button btnStart = findViewById(R.id.btn_start);
-            Button btnStop = findViewById(R.id.btn_stop);
+            Button btnStart = findViewById(R.id.main_btn_start);
+            Button btnStop = findViewById(R.id.main_btn_stop);
 
             tvName.setText(TEXT_NAME + myPet.getName());
 

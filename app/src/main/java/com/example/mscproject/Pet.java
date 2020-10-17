@@ -1,5 +1,9 @@
 package com.example.mscproject;
 
+import java.util.ArrayList;
+import java.util.List;
+
+
 enum PetType {
     Triceratops,
     Trex,
@@ -15,13 +19,21 @@ public class Pet implements StepListener {
 
     private String petName;
     private PetType petType;
-    //private String petDescription;
+    private ArrayList<Item> items;
 
     // Constructor for objects of class Pet
-    public Pet(int coins, String name, PetType petType) {
+    public Pet(int coins, String name, PetType petType, ArrayList<Item> items) {
         this.petName = name;
         this.petType = petType;
+
+        if (items == null) {
+            this.items = new ArrayList<Item>();
+        }
+        else {
+            this.items = items;
+        }
     }
+
 
     public String getName() {
         return petName;
@@ -43,5 +55,11 @@ public class Pet implements StepListener {
             coins = coins + 100;
             //numSteps = 0;
         }
+    }
+
+    public void storeItem(Item item) {
+
+        this.items.add(item);
+
     }
 }

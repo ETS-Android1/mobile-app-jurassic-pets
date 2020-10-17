@@ -30,5 +30,6 @@
 
     <string name="textview">TextView</string>
     <string name="home_footer">Leaves footer</string>
+    <string name="btn_shop">Shop</string>
 
 </resources>

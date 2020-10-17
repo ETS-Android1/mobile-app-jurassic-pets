@@ -22,15 +22,15 @@ public class ChoosePetActivity extends AppCompatActivity {
 
         boolean checked = ((RadioButton) view).isChecked();
         switch(view.getId()) {
-            case R.id.rdo_bront:
+            case R.id.choose_rb_bront:
                 if (checked)
                     petType = PetType.Bronchiosaurus;
                     break;
-            case R.id.rdo_trex:
+            case R.id.choose_rb_trex:
                 if (checked)
                     petType = PetType.Trex;
                     break;
-            case R.id.rdo_tri:
+            case R.id.choose_rb_tri:
                 if (checked)
                     petType = PetType.Triceratops;
                     break;
@@ -43,7 +43,7 @@ public class ChoosePetActivity extends AppCompatActivity {
         setContentView(R.layout.activity_choose_pet);
 
         //Enter the name of the pet
-        inputName = findViewById(R.id.et_inputName);
+        inputName = findViewById(R.id.choose_et_inputName);
 
         //Sends the name and type to the next page
         View.OnClickListener submit = new View.OnClickListener() {
@@ -57,7 +57,7 @@ public class ChoosePetActivity extends AppCompatActivity {
             }
         };
 
-        Button btn = findViewById(R.id.btnSubmit);
+        Button btn = findViewById(R.id.choose_btnSubmit);
         btn.setOnClickListener(submit);
 
 
