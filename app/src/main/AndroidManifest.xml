@@ -19,6 +19,9 @@
         </activity>
         <activity android:name=".ChoosePetActivity"/>
         <activity android:name=".MainActivity"/>
+        <activity android:name=".ShopActivity"/>
+        <activity android:name=".AboutActivity"/>
+        <activity android:name=".HelpActivity"/>
         <meta-data android:name="preloaded_fonts" android:resource="@array/preloaded_fonts"/>
     </application>
 

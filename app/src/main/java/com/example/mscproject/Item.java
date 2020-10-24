@@ -12,11 +12,7 @@ public class Item {
         this.cost = cost;
     }
 
-    public String getName() {return name;}
-
-    public String getDescription() {return description;}
-
-    public int getCost() {return cost;}
+    public int getCost() { return this.cost; }
 
 }
 

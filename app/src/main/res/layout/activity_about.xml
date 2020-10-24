@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="match_parent">
+
+    <Button
+            android:layout_width="100dp"
+            android:layout_height="48dp"
+            android:background="@drawable/btn_round"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:text="@string/home_btn"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:fontFamily="@font/bungee"
+            android:textAlignment="center"
+            app:layout_constraintTop_toBottomOf="@+id/about_tv_title"
+            app:layout_constraintBottom_toTopOf="@+id/footer" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.5" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintVertical_bias="0.725" android:id="@+id/btn_home" android:layout_marginTop="120dp"/>
+    <TextView
+            android:id="@+id/about_tv_title"
+            android:text="@string/title_screen"
+            android:layout_width="311dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:fontFamily="@font/bungee"
+            android:textSize="36sp"
+            android:textColor="#FABE0C"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintVertical_bias="0.053"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/header"/>
+    <ImageView
+            android:layout_width="425dp"
+            android:layout_height="104dp"
+            app:srcCompat="@drawable/bg_header"
+            android:id="@+id/header"
+            android:scaleType="fitXY"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.0" android:contentDescription="@string/header"/>
+    <ImageView
+            android:layout_width="435dp"
+            android:layout_height="106dp"
+            app:srcCompat="@drawable/bg_header_flipped"
+            android:id="@+id/footer"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/about_tv_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintVertical_bias="1.0" android:contentDescription="@string/footer"/>
+    <TextView
+            android:text="@string/about_tv_text"
+            android:layout_width="196dp"
+            android:layout_height="98dp" android:id="@+id/textView"
+            app:layout_constraintTop_toBottomOf="@+id/about_tv_title"
+            android:fontFamily="@font/bungee"
+
+            app:layout_constraintBottom_toTopOf="@+id/btn_home" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintVertical_bias="0.186"
+            app:layout_constraintHorizontal_bias="0.497"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

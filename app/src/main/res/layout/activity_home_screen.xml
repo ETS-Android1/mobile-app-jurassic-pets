@@ -41,6 +41,43 @@
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintVertical_bias="0.103"/>
+
+    <Button
+            android:id="@+id/home_btn_about"
+            android:text="@string/home_btn_about"
+            android:layout_width="100dp"
+            android:layout_height="48dp"
+            android:background="@drawable/btn_round"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:fontFamily="@font/bungee"
+            android:textAlignment="center"
+            app:layout_constraintTop_toBottomOf="@+id/home_iv_pets"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintVertical_bias="0.173"
+            app:layout_constraintBottom_toTopOf="@+id/home_iv_footer"
+            app:layout_constraintEnd_toStartOf="@+id/home_btn_start"/>
+    <Button
+            android:id="@+id/home_btn_help"
+            android:text="@string/home_btn_help"
+            android:layout_width="100dp"
+            android:layout_height="48dp"
+            android:background="@drawable/btn_round"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:fontFamily="@font/bungee"
+            android:textAlignment="center"
+            app:layout_constraintTop_toBottomOf="@+id/home_iv_pets"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintVertical_bias="0.173"
+            app:layout_constraintBottom_toTopOf="@+id/home_iv_footer"
+            app:layout_constraintStart_toEndOf="@+id/home_btn_start"/>
     <ImageView
             android:id="@+id/home_iv_pets"
             android:layout_width="387dp"
@@ -62,7 +99,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            android:contentDescription="@string/home_header"/>
+            android:contentDescription="@string/header"/>
     <ImageView
             android:id="@+id/home_iv_footer"
             android:layout_width="411dp"
@@ -72,7 +109,7 @@
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/home_btn_start" app:layout_constraintVertical_bias="1.0"
-            android:contentDescription="@string/home_footer"/>
+            android:contentDescription="@string/footer"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

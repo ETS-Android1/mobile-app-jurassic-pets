@@ -1,5 +1,6 @@
 package com.example.mscproject;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,9 +11,9 @@ enum PetType {
     Bronchiosaurus
 }
 
-public class Pet implements StepListener {
+public class Pet implements StepListener, Serializable {
 
-    private int level;
+    //private int level;
     private int coins;
     private int dailyTarget = 5;
     private int numSteps = 0;
@@ -27,7 +28,7 @@ public class Pet implements StepListener {
         this.petType = petType;
 
         if (items == null) {
-            this.items = new ArrayList<Item>();
+            this.items = new ArrayList<>();
         }
         else {
             this.items = items;
@@ -39,7 +40,7 @@ public class Pet implements StepListener {
         return petName;
     }
 
-    public int getLevel() { return level; }
+    //public int getLevel() { return level; }
 
     public PetType getType() { return petType; }
 

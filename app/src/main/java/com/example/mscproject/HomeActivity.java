@@ -7,22 +7,49 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class HomeActivity extends AppCompatActivity {
+
+    //Choose pet page
     private final View.OnClickListener choosePet = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
             Intent choosePetActivity = new Intent(HomeActivity.this, ChoosePetActivity.class);
             startActivity(choosePetActivity);
-
         }
     };
+    //About page
+    private final View.OnClickListener aboutPage = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            Intent aboutActivity = new Intent(HomeActivity.this, AboutActivity.class);
+            startActivity(aboutActivity);
+        }
+    };
+    //Help page
+    private final View.OnClickListener helpPage = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            Intent helpActivity = new Intent(HomeActivity.this, HelpActivity.class);
+            startActivity(helpActivity);
+        }
+    };
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_screen);
 
-       Button startBtn = findViewById(R.id.home_btn_start);
+        //Start button
+        Button startBtn = findViewById(R.id.home_btn_start);
         startBtn.setOnClickListener(choosePet);
+
+        //About button
+        Button aboutBtn = findViewById(R.id.home_btn_about);
+        aboutBtn.setOnClickListener(aboutPage);
+
+        //Help button
+        Button helpBtn = findViewById(R.id.home_btn_help);
+        helpBtn.setOnClickListener(helpPage);
 
     }
 }
