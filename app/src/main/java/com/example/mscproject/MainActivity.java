@@ -26,6 +26,8 @@ import android.os.Bundle;
         private static final String TEXT_COINS = "Coins: ";
 
         private Pet myPet;
+        private int coins;
+
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +38,7 @@ import android.os.Bundle;
             String petName = (String) intent.getSerializableExtra("PET_NAME");
             PetType petType = (PetType) intent.getSerializableExtra("PET_TYPE");
 
-            myPet = new Pet(0, petName, petType, null);
+            myPet = new Pet(coins, petName, petType, null);
 
             ivPet = findViewById(R.id.main_iv_pet);
 
@@ -65,6 +67,8 @@ import android.os.Bundle;
 
             Button btnStart = findViewById(R.id.main_btn_start);
             Button btnStop = findViewById(R.id.main_btn_stop);
+            Button shopBtn = findViewById(R.id.main_btn_shop);
+            shopBtn.setOnClickListener(submit);
 
             tvName.setText(TEXT_NAME + myPet.getName());
 
@@ -113,6 +117,17 @@ import android.os.Bundle;
             tvSteps.setText(TEXT_NUM_STEPS + myPet.getSteps());
             tvCoins.setText(TEXT_COINS + myPet.getCoins());
         }
+
+        View.OnClickListener submit = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent launchShopActivity = new Intent(MainActivity.this, ShopActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("MY_PET", myPet);
+                launchShopActivity.putExtras(bundle);
+                startActivity(launchShopActivity);
+            }
+        };
 
     }
 
