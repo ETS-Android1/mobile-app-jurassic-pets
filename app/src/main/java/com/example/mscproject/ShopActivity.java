@@ -2,6 +2,8 @@ package com.example.mscproject;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -27,12 +29,24 @@ public class ShopActivity extends AppCompatActivity {
     }
 
     /*
+    //Choose pet page
+    private final View.OnClickListener buyItem = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+
+            //Start button
+            Button buyAppleBtn = findViewById(R.id.home_btn_start);
+            startBtn.setOnClickListener(choosePet);
+
+
     public void buyItem(Item item){
 
-            int coins = this.myPet.getCoins();
+            this.myPet.getCoins();
 
 
     }
 
+
      */
+
 }

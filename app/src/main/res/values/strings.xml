@@ -24,12 +24,13 @@
     <string name="main_btn_stopPedometer">Stop</string>
     <string name="egg_image">egg image</string>
     <string name="image_of_the_pet">Image of the pet</string>
-
-    <string name="textview">TextView</string>
-
     <string name="btn_shop">Shop</string>
+
+    <!-- Shop page -->
     <string name="shop">Shop</string>
     <string name="shop_title">Shop title</string>
+    <string name="shop_btn_back">RETURN</string>
+    <string name="shop_btn_buyApple">BUY</string>
 
     <!-- About page -->
     <string name="about_tv_text">Jurassic Pets is a mobile application that lets you choose a pet that links to your daily steps.</string>

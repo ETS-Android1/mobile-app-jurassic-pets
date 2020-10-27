@@ -21,7 +21,7 @@ import android.os.Bundle;
         private SensorManager sensorManager;
         private Sensor accel;
 
-        private static final String TEXT_NAME = "Dino name: ";
+        private static final String TEXT_NAME = "";
         private static final String TEXT_NUM_STEPS = "Number of Steps: ";
         private static final String TEXT_COINS = "Coins: ";
 
@@ -94,7 +94,7 @@ import android.os.Bundle;
                 }
             });
 
-            //When the 'Stop' button is pressed
+            //When the 'Stop' button is pressed - ** Add the reset task into here instead **
             btnStop.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View arg0) {

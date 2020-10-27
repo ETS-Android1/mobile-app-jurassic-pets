@@ -15,7 +15,7 @@
             android:scaleType="fitCenter"
             android:background="@null"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/choose_btn_trex" app:layout_constraintHorizontal_bias="0.533"
+            app:layout_constraintEnd_toStartOf="@+id/choose_btn_trex" app:layout_constraintHorizontal_bias="0.47"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.394"/>
     <ImageButton
@@ -28,7 +28,7 @@
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="136dp" app:layout_constraintEnd_toStartOf="@+id/choose_btn_tri"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintHorizontal_bias="0.053" app:layout_constraintVertical_bias="0.394"
+            app:layout_constraintHorizontal_bias="0.183" app:layout_constraintVertical_bias="0.394"
             app:layout_constraintEnd_toEndOf="parent"/>
     <ImageButton
             android:id="@+id/choose_btn_tri"
@@ -43,10 +43,11 @@
 
     <EditText
             android:id="@+id/choose_et_inputName"
-            android:layout_width="174dp"
-            android:layout_height="39dp"
+            android:layout_width="195dp"
+            android:layout_height="49dp"
             android:inputType="textPersonName"
             android:ems="10"
+            android:fontFamily="@font/baloo"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.186"
@@ -68,37 +69,33 @@
             app:layout_constraintTop_toBottomOf="@+id/radioGroup"/>
     <RadioGroup
             android:id="@+id/radioGroup"
-            android:layout_width="152dp"
-            android:layout_height="97dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="293dp"
+            android:layout_height="36dp"
+            android:orientation="horizontal"
             app:layout_constraintTop_toBottomOf="@+id/choose_btn_bront"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintBottom_toTopOf="@+id/choose_btnSubmit">
+            app:layout_constraintBottom_toTopOf="@+id/choose_btnSubmit" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
         <RadioButton
                 android:id="@+id/choose_rb_bront"
-                android:text="@string/brontasaurus"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="122dp"
+                android:layout_height="36dp"
                 tools:layout_editor_absoluteY="454dp"
                 tools:layout_editor_absoluteX="174dp"
-                android:onClick="onPetClick"/>
+                android:onClick="onPetClick" android:fontFamily="@font/baloo"/>
         <RadioButton
                 android:id="@+id/choose_rb_trex"
-                android:text="@string/trex2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="126dp"
+                android:layout_height="36dp"
                 tools:layout_editor_absoluteY="496dp"
                 tools:layout_editor_absoluteX="173dp"
-                android:onClick="onPetClick"/>
+                android:onClick="onPetClick" android:fontFamily="@font/baloo"/>
         <RadioButton
                 android:id="@+id/choose_rb_tri"
-                android:text="@string/triceratops"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="108dp"
+                android:layout_height="match_parent"
                 tools:layout_editor_absoluteY="542dp"
                 tools:layout_editor_absoluteX="174dp"
-                android:onClick="onPetClick"/>
+                android:onClick="onPetClick" android:fontFamily="@font/baloo"/>
     </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
