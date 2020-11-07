@@ -12,7 +12,7 @@ public class ChoosePetActivity extends AppCompatActivity {
 
     private PetType petType;
     private String petName;
-    private EditText inputName;
+    private EditText etInputName;
 
     public ChoosePetActivity (){
     }
@@ -43,22 +43,25 @@ public class ChoosePetActivity extends AppCompatActivity {
         setContentView(R.layout.activity_choose_pet);
 
         //Enter the name of the pet
-        inputName = findViewById(R.id.choose_et_inputName);
+        etInputName = findViewById(R.id.choose_et_inputName);
 
         //Sends the name and type to the next page
         View.OnClickListener submit = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent launchMainActivity = new Intent(ChoosePetActivity.this, MainActivity.class);
-                launchMainActivity.putExtra("PET_TYPE", petType);
-                petName = inputName.getText().toString();
-                launchMainActivity.putExtra("PET_NAME", petName);
+                Bundle bundle = new Bundle();
+                petName = etInputName.getText().toString();
+                Pet myPet = new Pet(100, petName, petType, null);
+                bundle.putSerializable("MY_PET", myPet);
+                launchMainActivity.putExtras(bundle);
                 startActivity(launchMainActivity);
+
             }
         };
 
-        Button btn = findViewById(R.id.choose_btnSubmit);
-        btn.setOnClickListener(submit);
+        Button submitBtn = findViewById(R.id.choose_btnSubmit);
+        submitBtn.setOnClickListener(submit);
 
 
     }
