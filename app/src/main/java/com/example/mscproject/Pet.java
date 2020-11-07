@@ -24,6 +24,7 @@ public class Pet implements StepListener, Serializable {
     public Pet(int coins, String name, PetType petType, ArrayList<Item> items) {
         this.petName = name;
         this.petType = petType;
+        this.coins = coins;
 
         if (items == null) {
             this.items = new ArrayList<>();
@@ -41,6 +42,11 @@ public class Pet implements StepListener, Serializable {
     public PetType getType() { return petType; }
 
     public int getCoins() { return coins; }
+
+    public void removeCoins(int cost) {
+
+        coins = coins - cost;
+    }
 
     public int getSteps() {return numSteps; }
 

@@ -26,7 +26,6 @@ import android.os.Bundle;
         private static final String TEXT_COINS = "Coins: ";
 
         private Pet myPet;
-        private int coins;
 
 
         @Override
@@ -35,10 +34,8 @@ import android.os.Bundle;
             setContentView(R.layout.activity_main);
 
             Intent intent = getIntent();
-            String petName = (String) intent.getSerializableExtra("PET_NAME");
-            PetType petType = (PetType) intent.getSerializableExtra("PET_TYPE");
-
-            myPet = new Pet(coins, petName, petType, null);
+            Bundle bundle = intent.getExtras();
+            myPet = (Pet) bundle.getSerializable("MY_PET");
 
             ivPet = findViewById(R.id.main_iv_pet);
 
@@ -65,7 +62,7 @@ import android.os.Bundle;
             tvSteps = findViewById(R.id.main_tv_steps);
             tvCoins = findViewById(R.id.main_tv_coins);
 
-            Button btnStart = findViewById(R.id.main_btn_start);
+            Button btnWakeUp = findViewById(R.id.main_btn_start);
             Button btnStop = findViewById(R.id.main_btn_stop);
             Button shopBtn = findViewById(R.id.main_btn_shop);
             shopBtn.setOnClickListener(submit);
@@ -73,7 +70,7 @@ import android.os.Bundle;
             tvName.setText(TEXT_NAME + myPet.getName());
 
             // When the 'Wake up' button is pressed
-            btnStart.setOnClickListener(new View.OnClickListener() {
+            btnWakeUp.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View arg0) {
                     tvSteps.setText("Ready?" + myPet.getName()); //may be able to remove this
@@ -94,14 +91,17 @@ import android.os.Bundle;
                 }
             });
 
-            //When the 'Stop' button is pressed - ** Add the reset task into here instead **
+            //When the 'Stop' button is pressed - ** Add the reset task into here instead ** If removing effects - updateAccel
             btnStop.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View arg0) {
                     sensorManager.unregisterListener(MainActivity.this);
                 }
             });
+
         }
+
+
 
         @Override
         public void onAccuracyChanged(Sensor sensor, int accuracy) {

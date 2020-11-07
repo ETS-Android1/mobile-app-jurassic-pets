@@ -1,6 +1,8 @@
 package com.example.mscproject;
 
-public class Item {
+import java.io.Serializable;
+
+public class Item implements Serializable {
 
     private final String name;
     private final String description;
