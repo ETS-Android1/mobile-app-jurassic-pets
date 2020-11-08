@@ -15,6 +15,7 @@ import android.os.Bundle;
         private TextView tvSteps;
         private TextView tvName;
         private TextView tvCoins;
+        private TextView tvLevel;
         private ImageView ivPet;
 
         private StepDetector simpleStepDetector;
@@ -24,6 +25,7 @@ import android.os.Bundle;
         private static final String TEXT_NAME = "";
         private static final String TEXT_NUM_STEPS = "Number of Steps: ";
         private static final String TEXT_COINS = "Coins: ";
+        private static final String TEXT_LEVEL = "Level: ";
 
         private Pet myPet;
 
@@ -61,6 +63,7 @@ import android.os.Bundle;
             tvName = findViewById(R.id.main_tv_name);
             tvSteps = findViewById(R.id.main_tv_steps);
             tvCoins = findViewById(R.id.main_tv_coins);
+            tvLevel = findViewById(R.id.main_tv_level);
 
             Button btnWakeUp = findViewById(R.id.main_btn_start);
             Button btnStop = findViewById(R.id.main_btn_stop);
@@ -116,6 +119,7 @@ import android.os.Bundle;
             }
             tvSteps.setText(TEXT_NUM_STEPS + myPet.getSteps());
             tvCoins.setText(TEXT_COINS + myPet.getCoins());
+            tvLevel.setText(TEXT_LEVEL + myPet.getLevel());
         }
 
         View.OnClickListener submit = new View.OnClickListener() {

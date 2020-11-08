@@ -15,15 +15,17 @@ public class Pet implements StepListener, Serializable {
     private int coins;
     private int dailyTarget = 1;
     private int numSteps = 0;
+    private int level = 0;
 
     private String petName;
     private PetType petType;
     private ArrayList<Item> items;
 
-    // Constructor for objects of class Pet
-    public Pet(int coins, String name, PetType petType, ArrayList<Item> items) {
+
+    public Pet(int coins, String name, PetType petType, int level, ArrayList<Item> items) {
         this.petName = name;
         this.petType = petType;
+        this.level = level;
         this.coins = coins;
 
         if (items == null) {
@@ -40,6 +42,8 @@ public class Pet implements StepListener, Serializable {
     }
 
     public PetType getType() { return petType; }
+
+    public int getLevel() { return level; }
 
     public int getCoins() { return coins; }
 

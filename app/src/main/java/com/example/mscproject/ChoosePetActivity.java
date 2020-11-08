@@ -52,7 +52,7 @@ public class ChoosePetActivity extends AppCompatActivity {
                 Intent launchMainActivity = new Intent(ChoosePetActivity.this, MainActivity.class);
                 Bundle bundle = new Bundle();
                 petName = etInputName.getText().toString();
-                Pet myPet = new Pet(100, petName, petType, null);
+                Pet myPet = new Pet(100, petName, petType, 0, null);
                 bundle.putSerializable("MY_PET", myPet);
                 launchMainActivity.putExtras(bundle);
                 startActivity(launchMainActivity);
