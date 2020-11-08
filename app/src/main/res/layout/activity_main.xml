@@ -53,9 +53,24 @@
             android:textColor="@android:color/white"
             android:fontFamily="@font/bungee"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="48dp" app:layout_constraintBottom_toTopOf="@+id/main_iv_footer"
-            app:layout_constraintVertical_bias="0.0" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.879"/>
+            android:layout_marginTop="48dp"
+            app:layout_constraintBottom_toTopOf="@+id/main_iv_footer"
+            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.879"/>
+    <Button
+            android:id="@+id/main_btn_feed"
+            android:text="@string/btn_feed"
+            android:textColor="@android:color/white"
+            android:background="@drawable/btn_round"
+            android:fontFamily="@font/bungee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toBottomOf="@+id/main_btn_shop"
+            app:layout_constraintBottom_toTopOf="@+id/main_iv_footer" app:layout_constraintVertical_bias="0.077"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.879"
+    />
     <TextView
             android:id="@+id/main_tv_coins"
             android:layout_width="139dp"
@@ -65,7 +80,7 @@
             app:layout_constraintHorizontal_bias="0.183" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toTopOf="@+id/main_tv_steps" android:layout_marginBottom="28dp"
             android:fontFamily="@font/baloo" app:layout_constraintTop_toBottomOf="@+id/main_tv_level"
-            app:layout_constraintVertical_bias="0.362" android:textAlignment="viewStart"/>
+            app:layout_constraintVertical_bias="0.405" android:textAlignment="viewStart"/>
     <ImageView
             android:id="@+id/main_iv_pet"
             android:layout_width="138dp"
@@ -93,7 +108,8 @@
             android:id="@+id/main_tv_name"
             android:layout_width="195dp"
             android:layout_height="51dp"
-            android:textSize="16sp"
+            android:textSize="18sp"
+            android:textAlignment="viewStart"
             android:fontFamily="@font/baloo"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"

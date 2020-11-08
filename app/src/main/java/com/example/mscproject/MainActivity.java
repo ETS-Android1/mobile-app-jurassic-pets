@@ -68,6 +68,8 @@ import android.os.Bundle;
             Button btnWakeUp = findViewById(R.id.main_btn_start);
             Button btnStop = findViewById(R.id.main_btn_stop);
             Button shopBtn = findViewById(R.id.main_btn_shop);
+            final Button feedBtn = findViewById(R.id.main_btn_feed);
+            feedBtn.setVisibility(View.INVISIBLE);
             shopBtn.setOnClickListener(submit);
 
             tvName.setText(TEXT_NAME + myPet.getName());
@@ -78,6 +80,7 @@ import android.os.Bundle;
                 public void onClick(View arg0) {
                     tvSteps.setText("Ready?" + myPet.getName()); //may be able to remove this
                     tvCoins.setText("Pets coins: " + myPet.getCoins()); //may be able to remove this
+                    feedBtn.setVisibility(arg0.VISIBLE);
 
                     switch (myPet.getType()) {
                         case Bronchiosaurus:

@@ -25,6 +25,7 @@
     <string name="egg_image">egg image</string>
     <string name="image_of_the_pet">Image of the pet</string>
     <string name="btn_shop">Shop</string>
+    <string name="btn_feed">Feed</string>
 
     <!-- Shop page -->
     <string name="shop">Shop</string>
