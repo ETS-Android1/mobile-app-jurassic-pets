@@ -1,6 +1,7 @@
 package com.example.mscproject;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -39,6 +40,12 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_screen);
 
+
+        DatabaseHelper dbHelper = new DatabaseHelper(this);
+
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+
         //Start button
         Button startBtn = findViewById(R.id.home_btn_start);
         startBtn.setOnClickListener(choosePet);
@@ -51,7 +58,10 @@ public class HomeActivity extends AppCompatActivity {
         Button helpBtn = findViewById(R.id.home_btn_help);
         helpBtn.setOnClickListener(helpPage);
 
+
+
     }
+
 }
 
 
