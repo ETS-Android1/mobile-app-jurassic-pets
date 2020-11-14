@@ -29,11 +29,11 @@ public class ShopActivity extends AppCompatActivity {
         tvCoins = findViewById(R.id.shop_tv_coins);
         tvCoins.setText(TEXT_COINS + myPet.getCoins());
 
-        Button buyBtn = findViewById(R.id.shop_btn_buy);
-        buyBtn.setOnClickListener(buy);
+        Button btnBuy = findViewById(R.id.shop_btn_buy);
+        btnBuy.setOnClickListener(buy);
 
-        Button backBtn = findViewById(R.id.shop_btn_back);
-        backBtn.setOnClickListener(returnClicked);
+        Button btnBack = findViewById(R.id.shop_btn_back);
+        btnBack.setOnClickListener(returnClicked);
 
 
     }
@@ -60,14 +60,14 @@ public class ShopActivity extends AppCompatActivity {
             switch (itemId) {
                 case R.id.shop_rb_item1:
 
-                    Item item1 = new Item("Apple", "This is an apple", 100);
+                    Item item1 = new Item(1, "Apple", "Food","This is an apple", 100, 10);
                     buyItem(item1);
 
                     break;
 
                 case R.id.shop_rb_item2:
 
-                    Item item2 = new Item("Banana", "This is a banana", 200);
+                    Item item2 = new Item(2, "Banana", "Food","This is a banana", 200, 20);
                     buyItem(item2);
 
                     break;

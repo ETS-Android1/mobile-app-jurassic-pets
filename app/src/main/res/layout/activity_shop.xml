@@ -29,22 +29,21 @@
             app:layout_constraintHorizontal_bias="0.537"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintVertical_bias="0.041" android:fontFamily="@font/baloo"/>
+
     <Button
             android:id="@+id/shop_btn_back"
             android:text="@string/shop_btn_back"
-            android:layout_width="110dp"
-            android:layout_height="42dp"
+            android:layout_width="106dp"
+            android:layout_height="39dp"
             android:background="@drawable/btn_round"
             android:textColor="@android:color/white"
-            android:textSize="18sp"
+            android:textSize="14sp"
             android:fontFamily="@font/bungee"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintHorizontal_bias="0.524"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/shop_tv_coins"
-            app:layout_constraintVertical_bias="0.708"/>
-
+            app:layout_constraintTop_toBottomOf="@+id/shop_btn_buy"
+            app:layout_constraintVertical_bias="0.708" app:layout_constraintBottom_toTopOf="@+id/shop_iv_footer"/>
     <Button
             android:id="@+id/shop_btn_buy"
             android:text="@string/shop_btn_buyApple"
@@ -57,8 +56,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/shop_rg"
-            android:layout_marginTop="40dp" app:layout_constraintHorizontal_bias="0.527"
-            app:layout_constraintBottom_toTopOf="@+id/shop_btn_back" app:layout_constraintVertical_bias="0.029"/>
+            android:layout_marginTop="40dp"
+            app:layout_constraintBottom_toTopOf="@+id/shop_btn_back"/>
     <ImageView
             android:id="@+id/shop_iv_header"
             android:layout_width="373dp"
