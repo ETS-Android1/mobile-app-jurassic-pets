@@ -11,8 +11,6 @@ import android.os.Bundle;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.Iterator;
-
 public class MainActivity extends AppCompatActivity implements SensorEventListener, ItemListRecyclerAdaptor.ItemClickListener {
         private TextView tvSteps;
         private TextView tvName;
@@ -91,7 +89,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                 public void onClick(View arg0) {
                     tvSteps.setText("Ready?" + myPet.getName()); //may be able to remove this
                     tvCoins.setText("Pets coins: " + myPet.getCoins()); //may be able to remove this
-                    btnFeed.setVisibility(arg0.VISIBLE);
+                    btnFeed.setVisibility(View.VISIBLE);
                     myPet.wakeUp();
                     btnWakeUp.setVisibility(View.INVISIBLE);
 
@@ -122,6 +120,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                         myPet.levelUp();
                         pbHappiness.setProgress(0);
                     }
+                    DatabaseHelper dbHelper = new DatabaseHelper(MainActivity.this);
+                    dbHelper.updatePet(myPet);
                 }
             });
         }

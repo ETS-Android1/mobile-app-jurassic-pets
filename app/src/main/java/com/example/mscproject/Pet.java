@@ -6,19 +6,31 @@ import java.util.List;
 
 
 enum PetType {
-    Triceratops,
-    Trex,
-    Bronchiosaurus
+    Triceratops(0),
+    Trex(1),
+    Bronchiosaurus(2);
+
+    private int petType;
+
+    PetType (int petType) {
+        this.petType = petType;
+    }
+
+    public int getValue() {
+        return this.petType;
+    }
+
 }
 
 public class Pet implements StepListener, Serializable {
 
+    private int id;
     private int coins;
     private int dailyTarget = 1;
     private int numSteps = 0;
     private int level;
     private int happiness;
-    private boolean isAwake = false;
+    private boolean isAwake;
 
     private String petName;
     private PetType petType;
@@ -40,6 +52,9 @@ public class Pet implements StepListener, Serializable {
             this.items = items;
         }
     }
+
+    public int getId() { return id; }
+
     public String getName() {
         return petName;
     }
@@ -95,5 +110,9 @@ public class Pet implements StepListener, Serializable {
 
     public boolean getIsAwake() {
         return isAwake;
+    }
+
+    public void storeId(int id) {
+        this.id = id;
     }
 }

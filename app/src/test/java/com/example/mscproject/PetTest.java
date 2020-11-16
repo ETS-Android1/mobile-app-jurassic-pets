@@ -3,8 +3,6 @@ package com.example.mscproject;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
-import java.sql.Timestamp;
 import java.util.Date;
 
 import static org.junit.Assert.*;
@@ -28,7 +26,7 @@ public class PetTest {
     @Test
     public void step(){
 
-        Pet pet = new Pet(0, "Fido", PetType.Bronchiosaurus, 0,0, null);
+        Pet pet = new Pet(0, "Fido", PetType.Bronchiosaurus, 0,0, null, false);
 
         Date date = new Date();
         long timestamp = date.getTime();

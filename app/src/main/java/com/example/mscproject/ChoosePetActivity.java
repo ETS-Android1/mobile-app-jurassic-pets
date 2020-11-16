@@ -46,37 +46,27 @@ public class ChoosePetActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_pet);
 
-        DatabaseHelper dbHelper = new DatabaseHelper(this);
-        final SQLiteDatabase db = dbHelper.getWritableDatabase();
 
         //Enter the name of the pet
         etInputName = findViewById(R.id.choose_et_inputName);
 
-        //Sends the name and type to the next page
+        //Sends the pet data to the next page
         View.OnClickListener submit = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 Intent launchMainActivity = new Intent(ChoosePetActivity.this, MainActivity.class);
                 Bundle bundle = new Bundle();
                 petName = etInputName.getText().toString();
                 Pet myPet = new Pet(100, petName, petType, 0, 0, null, false);
-
-                ContentValues values = new ContentValues();
-                values.put(DatabaseHelper.COLUMN_PET_NAME, myPet.getName());
-                //values.put(DatabaseHelper.COLUMN_PET_TYPE, myPet.getType()); -- Need to change the type for enum
-                values.put(DatabaseHelper.COLUMN_PET_LEVEL, myPet.getLevel());
-                values.put(DatabaseHelper.COLUMN_PET_COINS, myPet.getCoins());
-                values.put(DatabaseHelper.COLUMN_PET_HAPPINESS, myPet.getHappiness());
-                //values.put(DatabaseHelper.COLUMN_PET_ITEMS, myPet.getItems()); -- Need to change the type for array
-                values.put(DatabaseHelper.COLUMN_PET_ISAWAKE, myPet.getIsAwake());
-
-                long newRowId = db.insert(PET_TABLE, null, values);
-
+                dbHelper.addPet(myPet);
                 bundle.putSerializable("MY_PET", myPet);
                 launchMainActivity.putExtras(bundle);
                 startActivity(launchMainActivity);
 
             }
+
+            DatabaseHelper dbHelper = new DatabaseHelper(ChoosePetActivity.this);
         };
 
         Button submitBtn = findViewById(R.id.choose_btnSubmit);
