@@ -1,58 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
                                                    xmlns:app="http://schemas.android.com/apk/res-auto"
-                                                   xmlns:tools="http://schemas.android.com/tools"
-                                                   android:layout_width="match_parent"
+                                                   xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
                                                    android:layout_height="match_parent"
                                                    android:background="#FFECDE">
 
 
-    <ImageButton
-            android:id="@+id/choose_btn_bront"
-            android:layout_width="107dp"
-            android:layout_height="151dp" app:srcCompat="@drawable/char_select_01"
-            android:contentDescription="@string/bront"
-            android:scaleType="fitCenter"
-            android:background="@null"
+    <TextView
+            android:id="@+id/choose_tv_submitinfo"
+            android:text="@string/choose_toast_submit_info"
+            android:layout_width="339dp"
+            android:layout_height="45dp"
+            android:textColor="@color/mainText"
+            android:fontFamily="@font/baloo"
+            android:textAlignment="center"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/choose_btn_trex" app:layout_constraintHorizontal_bias="0.47"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.394"/>
-    <ImageButton
-            android:id="@+id/choose_btn_trex"
-            android:layout_width="107dp"
-            android:layout_height="151dp" app:srcCompat="@drawable/char_select_02"
-            android:contentDescription="@string/trex"
-            android:scaleType="fitCenter"
-            android:background="@null"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="136dp" app:layout_constraintEnd_toStartOf="@+id/choose_btn_tri"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintHorizontal_bias="0.183" app:layout_constraintVertical_bias="0.394"
-            app:layout_constraintEnd_toEndOf="parent"/>
-    <ImageButton
-            android:id="@+id/choose_btn_tri"
-            android:layout_width="107dp"
-            android:layout_height="151dp"
-            android:contentDescription="@string/tri" android:scaleType="fitCenter"
-            android:background="@null" app:srcCompat="@drawable/char_select_03"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.878"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.394"/>
-
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup"
+            app:layout_constraintBottom_toTopOf="@+id/choose_btnSubmit"/>
     <EditText
             android:id="@+id/choose_et_inputName"
             android:layout_width="195dp"
             android:layout_height="49dp"
             android:inputType="textPersonName"
+            android:textColor="@color/mainText"
             android:ems="10"
             android:fontFamily="@font/baloo"
-            app:layout_constraintStart_toStartOf="parent"
+            android:hint="@string/name_your_pet"
+            android:importantForAutofill="no"
+            android:textColorLink="#FFFFFF"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.186"
-            android:hint="@string/name_your_pet" android:importantForAutofill="no"
-            app:layout_constraintHorizontal_bias="0.451"/>
+            app:layout_constraintBottom_toTopOf="@+id/choose_tv_type"/>
     <Button
             android:id="@+id/choose_btnSubmit"
             android:text="@string/choose_btn_nextPage"
@@ -64,38 +44,59 @@
             style="@style/Widget.AppCompat.Button.Borderless"
             android:fontFamily="@font/bungee"
             android:textAlignment="center"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/radioGroup"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.5" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/choose_tv_submitinfo"/>
     <RadioGroup
             android:id="@+id/radioGroup"
-            android:layout_width="293dp"
-            android:layout_height="36dp"
+            android:layout_width="366dp"
+            android:layout_height="169dp"
             android:orientation="horizontal"
-            app:layout_constraintTop_toBottomOf="@+id/choose_btn_bront"
-            app:layout_constraintBottom_toTopOf="@+id/choose_btnSubmit" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/choose_tv_type"
+            app:layout_constraintBottom_toTopOf="@+id/choose_tv_submitinfo" app:layout_constraintHorizontal_bias="0.39">
         <RadioButton
                 android:id="@+id/choose_rb_bront"
-                android:layout_width="122dp"
-                android:layout_height="36dp"
-                tools:layout_editor_absoluteY="454dp"
-                tools:layout_editor_absoluteX="174dp"
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:cropToPadding="false"
+                android:scaleType="fitCenter"
+                android:buttonTint="@color/mainText"
+                android:background="@drawable/char_select_01"
                 android:onClick="onPetClick" android:fontFamily="@font/baloo"/>
         <RadioButton
                 android:id="@+id/choose_rb_trex"
-                android:layout_width="126dp"
-                android:layout_height="36dp"
-                tools:layout_editor_absoluteY="496dp"
-                tools:layout_editor_absoluteX="173dp"
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:cropToPadding="false"
+                android:scaleType="fitCenter"
+                android:buttonTint="@color/mainText"
+                android:background="@drawable/char_select_02"
                 android:onClick="onPetClick" android:fontFamily="@font/baloo"/>
         <RadioButton
                 android:id="@+id/choose_rb_tri"
-                android:layout_width="108dp"
+                android:layout_width="120dp"
                 android:layout_height="match_parent"
-                tools:layout_editor_absoluteY="542dp"
-                tools:layout_editor_absoluteX="174dp"
+                android:adjustViewBounds="true"
+                android:cropToPadding="false"
+                android:scaleType="fitCenter"
+                android:buttonTint="@color/mainText"
+                android:background="@drawable/char_select_03"
                 android:onClick="onPetClick" android:fontFamily="@font/baloo"/>
     </RadioGroup>
+    <TextView
+            android:id="@+id/choose_tv_type"
+            android:text="@string/choose_toast_type_info"
+            android:textColor="@color/mainText"
+            android:layout_width="310dp"
+            android:layout_height="59dp"
+            android:fontFamily="@font/baloo"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toBottomOf="@+id/choose_et_inputName"
+            app:layout_constraintBottom_toTopOf="@+id/radioGroup" android:textAlignment="center"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

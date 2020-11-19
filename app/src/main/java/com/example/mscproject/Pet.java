@@ -19,14 +19,13 @@ enum PetType {
     public int getValue() {
         return this.petType;
     }
-
 }
 
 public class Pet implements StepListener, Serializable {
 
     private int id;
     private int coins;
-    private int dailyTarget = 1;
+    private int target = 2;
     private int numSteps = 0;
     private int level;
     private int happiness;
@@ -88,8 +87,9 @@ public class Pet implements StepListener, Serializable {
     @Override
     public void step(long timeNs) {
         numSteps++;
-        if (numSteps >= dailyTarget) {
+        if (numSteps == target) {
             coins = coins + 100;
+            target += target;
         }
     }
 
