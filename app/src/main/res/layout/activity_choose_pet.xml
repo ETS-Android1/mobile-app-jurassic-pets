@@ -37,16 +37,16 @@
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toBottomOf="@+id/radioGroup"/>
     <RadioGroup
             android:id="@+id/radioGroup"
-            android:layout_width="400dp"
-            android:layout_height="189dp"
+            android:layout_width="369dp"
+            android:layout_height="148dp"
             android:orientation="horizontal"
             app:layout_constraintTop_toBottomOf="@+id/choose_et_inputName"
             app:layout_constraintBottom_toTopOf="@+id/choose_btnSubmit" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintHorizontal_bias="0.5" app:layout_constraintEnd_toEndOf="parent">
+            app:layout_constraintHorizontal_bias="0.615" app:layout_constraintEnd_toEndOf="parent">
         <RadioButton
                 android:id="@+id/choose_rb_bront"
-                android:layout_width="132dp"
-                android:layout_height="match_parent"
+                android:layout_width="124dp"
+                android:layout_height="146dp"
                 android:adjustViewBounds="true"
                 android:cropToPadding="false"
                 android:scaleType="fitCenter"
@@ -55,8 +55,8 @@
                 android:onClick="onPetClick" android:fontFamily="@font/baloo"/>
         <RadioButton
                 android:id="@+id/choose_rb_trex"
-                android:layout_width="132dp"
-                android:layout_height="match_parent"
+                android:layout_width="122dp"
+                android:layout_height="147dp"
                 android:adjustViewBounds="true"
                 android:cropToPadding="false"
                 android:scaleType="fitCenter"
@@ -65,8 +65,8 @@
                 android:onClick="onPetClick" android:fontFamily="@font/baloo"/>
         <RadioButton
                 android:id="@+id/choose_rb_tri"
-                android:layout_width="132dp"
-                android:layout_height="match_parent"
+                android:layout_width="124dp"
+                android:layout_height="146dp"
                 android:adjustViewBounds="true"
                 android:cropToPadding="false"
                 android:scaleType="fitCenter"

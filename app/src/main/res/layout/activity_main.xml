@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
                                                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   xmlns:tools="http://schemas.android.com/tools"
                                                    android:gravity="center"
                                                    android:layout_width="match_parent"
                                                    android:layout_height="match_parent"
@@ -9,15 +10,15 @@
 
     <TextView
             android:id="@+id/main_tv_level"
-            android:layout_width="135dp"
-            android:layout_height="37dp"
+            android:layout_width="172dp"
+            android:layout_height="41dp"
             android:textColor="@color/mainText"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintHorizontal_bias="0.181"
+            app:layout_constraintHorizontal_bias="0.175"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toTopOf="@+id/main_iv_pet"
             android:layout_marginBottom="24dp"
-            app:layout_constraintVertical_bias="0.466"
+            app:layout_constraintVertical_bias="0.626"
             android:fontFamily="@font/baloo"
             app:layout_constraintTop_toBottomOf="@+id/main_tv_coins"
             android:textAlignment="viewStart"/>
@@ -32,8 +33,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/main_iv_pet"
-            android:layout_marginTop="24dp" app:layout_constraintBottom_toTopOf="@+id/main_iv_footer"
-            app:layout_constraintVertical_bias="0.25"/>
+            android:layout_marginTop="24dp"
+            app:layout_constraintBottom_toBottomOf="@+id/main_iv_footer" app:layout_constraintVertical_bias="0.019"/>
     <Button
             android:id="@+id/main_btn_shop"
             android:layout_width="78dp"
@@ -58,19 +59,30 @@
             android:layout_width="78dp"
             android:layout_height="35dp"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toBottomOf="@+id/main_btn_shop"
-            app:layout_constraintBottom_toTopOf="@+id/main_iv_footer" app:layout_constraintVertical_bias="0.077"
+            app:layout_constraintBottom_toTopOf="@+id/main_iv_footer" app:layout_constraintVertical_bias="0.053"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.879"
     />
     <TextView
             android:id="@+id/main_tv_coins"
-            android:layout_width="139dp"
-            android:layout_height="38dp"
+            android:layout_width="171dp"
+            android:layout_height="40dp"
             android:textColor="@color/mainText"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintHorizontal_bias="0.183" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.179" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toTopOf="@+id/main_tv_steps" android:layout_marginBottom="28dp"
             android:fontFamily="@font/baloo" app:layout_constraintTop_toBottomOf="@+id/main_tv_level"
-            app:layout_constraintVertical_bias="0.43" android:textAlignment="viewStart"/>
+            app:layout_constraintVertical_bias="0.348" android:textAlignment="viewStart"/>
+    <TextView
+            android:id="@+id/main_tv_target"
+            android:layout_width="135dp"
+            android:layout_height="40dp"
+            android:textColor="@color/mainText"
+            android:fontFamily="@font/baloo"
+            android:textAlignment="viewStart"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.265"
+            app:layout_constraintEnd_toStartOf="@+id/main_btn_feed"
+            app:layout_constraintTop_toBottomOf="@+id/main_tv_steps"
+            app:layout_constraintBottom_toTopOf="@+id/main_tv_coins" app:layout_constraintVertical_bias="0.239"/>
     <ImageView
             android:id="@+id/main_iv_pet"
             android:layout_width="138dp"
@@ -80,13 +92,13 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintHorizontal_bias="0.498" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias="0.642"/>
+            app:layout_constraintVertical_bias="0.621"/>
     <TextView
             android:id="@+id/main_tv_steps"
-            android:layout_width="172dp"
-            android:layout_height="41dp"
+            android:layout_width="171dp"
+            android:layout_height="40dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintHorizontal_bias="0.21"
+            app:layout_constraintHorizontal_bias="0.179"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toTopOf="@+id/main_tv_coins"
             android:layout_marginBottom="20dp"
@@ -104,11 +116,9 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginTop="48dp"
-            android:layout_marginStart="44dp"
-            app:layout_constraintEnd_toStartOf="@+id/main_btn_shop"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintBottom_toTopOf="@+id/main_tv_level"
-            app:layout_constraintVertical_bias="0.0" android:textColor="@color/mainText"/>
+            app:layout_constraintVertical_bias="0.0" android:textColor="@color/mainText"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.179"/>
     <ImageView
             android:id="@+id/main_iv_footer"
             android:layout_width="382dp"
@@ -125,18 +135,19 @@
             android:layout_width="110dp"
             android:layout_height="22dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintHorizontal_bias="0.178"
+            app:layout_constraintHorizontal_bias="0.906"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/main_tv_level"
-            app:layout_constraintBottom_toTopOf="@+id/main_iv_pet"
-            app:layout_constraintVertical_bias="0.648"/>
+            app:layout_constraintTop_toBottomOf="@+id/main_btn_feed"
+            app:layout_constraintBottom_toTopOf="@+id/main_rv_itemList" app:layout_constraintVertical_bias="0.39"/>
     <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/main_rv_itemList"
-            android:layout_width="89dp"
-            android:layout_height="236dp"
+            android:layout_width="71dp"
+            android:layout_height="207dp"
+            android:textSize="18sp"
+            android:fontFamily="@font/baloo"
             app:layout_constraintTop_toBottomOf="@+id/main_btn_feed"
             app:layout_constraintBottom_toTopOf="@+id/main_iv_footer"
-            app:layout_constraintStart_toEndOf="@+id/main_iv_pet" app:layout_constraintHorizontal_bias="0.395"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintVertical_bias="0.28"/>
+            app:layout_constraintStart_toEndOf="@+id/main_iv_pet" app:layout_constraintHorizontal_bias="0.575"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintVertical_bias="0.643"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

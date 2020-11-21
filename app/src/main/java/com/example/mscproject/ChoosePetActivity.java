@@ -112,7 +112,6 @@ public class ChoosePetActivity extends AppCompatActivity {
         etInputName.addTextChangedListener(textWatcher);
 
 
-
         //Sends the pet data to the next page
         View.OnClickListener submit = new View.OnClickListener() {
             @Override
@@ -121,7 +120,7 @@ public class ChoosePetActivity extends AppCompatActivity {
                 Intent launchMainActivity = new Intent(ChoosePetActivity.this, MainActivity.class);
                 Bundle bundle = new Bundle();
                 petName = etInputName.getText().toString();
-                Pet myPet = new Pet(100, petName, petType, 0, 0, null, false);
+                Pet myPet = new Pet(500, petName, petType, 0, 0, null, false);
                 dbHelper.addPet(myPet);
                 bundle.putSerializable("MY_PET", myPet);
                 launchMainActivity.putExtras(bundle);
