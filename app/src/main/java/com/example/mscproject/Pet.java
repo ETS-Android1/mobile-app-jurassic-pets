@@ -64,6 +64,8 @@ public class Pet implements StepListener, Serializable {
 
     public int getCoins() { return coins; }
 
+    public int getTarget() { return target; }
+
     public void removeCoins(int cost) { coins = coins - cost; }
 
     public int getSteps() {return numSteps; }
@@ -115,4 +117,6 @@ public class Pet implements StepListener, Serializable {
     public void storeId(int id) {
         this.id = id;
     }
+
+
 }

@@ -26,6 +26,11 @@ public class Item implements Serializable {
 
     public String getName() { return this.name; }
 
+    public String itemToString() {
+        return "Item: " + name +
+                "Description: " + description +
+                "Cost: " + cost;
+    }
 }
 
 

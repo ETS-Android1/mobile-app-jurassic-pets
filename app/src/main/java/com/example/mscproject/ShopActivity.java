@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,6 +14,8 @@ import java.util.List;
 public class ShopActivity extends AppCompatActivity {
 
     private TextView tvCoins;
+    private ImageView costume;
+
     private List<Item> item;
     private Pet myPet;
     private static final String TEXT_COINS = "Coins: ";
@@ -33,9 +36,10 @@ public class ShopActivity extends AppCompatActivity {
         btnBuy.setOnClickListener(buy);
 
         Button btnBack = findViewById(R.id.shop_btn_back);
-        btnBack.setOnClickListener(returnClicked);
+        btnBack.setOnClickListener(returnPetItems);
 
-
+        costume = findViewById(R.id.shop_iv_hero);
+        changePicture(R.drawable.char_hero_01, R.drawable.char_hero_02, R.drawable.char_hero_03);
     }
 
     public void buyItem(Item item) {
@@ -49,6 +53,21 @@ public class ShopActivity extends AppCompatActivity {
         }
 
     }
+
+    private void changePicture(int bronchiosaurusPic, int trexPic, int triceratopsPic) {
+        switch (myPet.getType()) {
+            case Bronchiosaurus:
+                costume.setImageResource(bronchiosaurusPic);
+                break;
+            case Trex:
+                costume.setImageResource(trexPic);
+                break;
+            case Triceratops:
+                costume.setImageResource(triceratopsPic);
+                break;
+        }
+    }
+
 
     private final View.OnClickListener buy = new View.OnClickListener() {
         @Override
@@ -71,13 +90,20 @@ public class ShopActivity extends AppCompatActivity {
                     buyItem(item2);
 
                     break;
+
+                case R.id.shop_rb_item3:
+
+                    Item item3 = new Item(2, "Hero outfit", "Costume","This is a super hero outfit for your pet", 800, 0);
+                    buyItem(item3);
+
+                    break;
             }
 
         }
 
     };
 
-    View.OnClickListener returnClicked = new View.OnClickListener() {
+    View.OnClickListener returnPetItems = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
             Intent launchMainActivity = new Intent(ShopActivity.this, MainActivity.class);
