@@ -10,18 +10,15 @@
 
     <TextView
             android:id="@+id/main_tv_level"
-            android:layout_width="172dp"
+            android:layout_width="115dp"
             android:layout_height="41dp"
             android:textColor="@color/mainText"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintHorizontal_bias="0.175"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/main_iv_pet"
-            android:layout_marginBottom="24dp"
-            app:layout_constraintVertical_bias="0.626"
             android:fontFamily="@font/baloo"
+            android:textAlignment="viewStart"
             app:layout_constraintTop_toBottomOf="@+id/main_tv_coins"
-            android:textAlignment="viewStart"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.141" app:layout_constraintEnd_toEndOf="parent"
+    />
     <Button
             android:id="@+id/main_btn_start"
             android:layout_width="95dp"
@@ -64,14 +61,13 @@
     />
     <TextView
             android:id="@+id/main_tv_coins"
-            android:layout_width="171dp"
-            android:layout_height="40dp"
+            android:layout_width="152dp"
+            android:layout_height="38dp"
             android:textColor="@color/mainText"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintHorizontal_bias="0.179" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/main_tv_steps" android:layout_marginBottom="28dp"
-            android:fontFamily="@font/baloo" app:layout_constraintTop_toBottomOf="@+id/main_tv_level"
-            app:layout_constraintVertical_bias="0.348" android:textAlignment="viewStart"/>
+            app:layout_constraintHorizontal_bias="0.162" app:layout_constraintEnd_toEndOf="parent"
+            android:fontFamily="@font/baloo" app:layout_constraintTop_toBottomOf="@+id/main_tv_target"
+            android:textAlignment="viewStart"/>
     <TextView
             android:id="@+id/main_tv_target"
             android:layout_width="135dp"
@@ -79,10 +75,11 @@
             android:textColor="@color/mainText"
             android:fontFamily="@font/baloo"
             android:textAlignment="viewStart"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.265"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.3"
             app:layout_constraintEnd_toStartOf="@+id/main_btn_feed"
             app:layout_constraintTop_toBottomOf="@+id/main_tv_steps"
-            app:layout_constraintBottom_toTopOf="@+id/main_tv_coins" app:layout_constraintVertical_bias="0.239"/>
+            app:layout_constraintBottom_toTopOf="@+id/main_tv_coins" app:layout_constraintVertical_bias="0.282"
+            app:layout_constraintEnd_toEndOf="parent"/>
     <ImageView
             android:id="@+id/main_iv_pet"
             android:layout_width="138dp"
@@ -98,14 +95,13 @@
             android:layout_width="171dp"
             android:layout_height="40dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintHorizontal_bias="0.179"
+            app:layout_constraintHorizontal_bias="0.175"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/main_tv_coins"
-            android:layout_marginBottom="20dp"
             android:textAlignment="viewStart"
             android:textColor="@color/mainText"
-            android:fontFamily="@font/baloo" app:layout_constraintTop_toBottomOf="@+id/main_tv_name"
-            app:layout_constraintVertical_bias="0.0"/>
+            android:fontFamily="@font/baloo"
+            app:layout_constraintTop_toBottomOf="@+id/main_tv_name"
+            app:layout_constraintBottom_toTopOf="@+id/main_tv_target"/>
     <TextView
             android:id="@+id/main_tv_name"
             android:layout_width="171dp"
@@ -116,9 +112,8 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginTop="48dp"
-            app:layout_constraintBottom_toTopOf="@+id/main_tv_level"
-            app:layout_constraintVertical_bias="0.0" android:textColor="@color/mainText"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.179"/>
+            android:textColor="@color/mainText"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.175"/>
     <ImageView
             android:id="@+id/main_iv_footer"
             android:layout_width="382dp"

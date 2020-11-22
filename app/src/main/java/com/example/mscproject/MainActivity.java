@@ -4,6 +4,7 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.os.Handler;
 import android.view.View;
 import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
@@ -46,6 +47,10 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
         changePicture(R.drawable.char_sleep_01, R.drawable.char_sleep_02, R.drawable.char_sleep_03);
 
+        Toast wakeUpToast;
+        wakeUpToast = Toast.makeText(getApplicationContext(), "Press the wake up button to start playing with " + myPet.getName(), Toast.LENGTH_SHORT);
+        wakeUpToast.show();
+
 
         // Set up the RecyclerView
         RecyclerView recyclerView = findViewById(R.id.main_rv_itemList);
@@ -83,6 +88,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         if (myPet.getIsAwake()) {
             changePicture(R.drawable.char_main_01, R.drawable.char_main_02, R.drawable.char_main_03);
             btnWakeUp.setVisibility(View.INVISIBLE);
+            wakeUpToast.cancel();
         }
         else {
             btnFeed.setVisibility(View.INVISIBLE);
@@ -98,6 +104,17 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                 myPet.wakeUp();
                 btnWakeUp.setVisibility(View.INVISIBLE);
 
+                Toast.makeText(MainActivity.this, "Start moving to hit your step target and earn coins!", Toast.LENGTH_LONG).show();
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable()
+                {
+                    @Override
+                    public void run()
+                    {
+                        Toast.makeText(getApplicationContext(), "You can spend your coins at the shop", Toast.LENGTH_LONG).show();
+                    }
+                }, 4000);
+
                 changePicture(R.drawable.char_main_01, R.drawable.char_main_02, R.drawable.char_main_03);
                 sensorManager.registerListener(MainActivity.this, accel, SensorManager.SENSOR_DELAY_FASTEST);
             }
@@ -108,6 +125,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             @Override
             public void onClick(View arg0) {
                 myPet.feed();
+                adapter.notifyDataSetChanged();
                 int petHappiness = myPet.getHappiness();
                 pbHappiness.setProgress(petHappiness);
 
@@ -119,7 +137,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                 dbHelper.updatePet(myPet);
             }
         });
-        adapter.notifyDataSetChanged();
     }
 
     private void changePicture(int bronchiosaurusPic, int trexPic, int triceratopsPic) {

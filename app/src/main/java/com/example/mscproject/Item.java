@@ -24,6 +24,8 @@ public class Item implements Serializable {
 
     public int getPoints() { return this.points; }
 
+    public String getType() { return this.type; }
+
     public String getName() { return this.name; }
 
     public String itemToString() {

@@ -3,10 +3,7 @@ package com.example.mscproject;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.RadioGroup;
-import android.widget.TextView;
+import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.List;
@@ -40,19 +37,48 @@ public class ShopActivity extends AppCompatActivity {
 
         costume = findViewById(R.id.shop_iv_hero);
         changePicture(R.drawable.char_hero_01, R.drawable.char_hero_02, R.drawable.char_hero_03);
+
+        Toast buyingToast;
+        buyingToast = Toast.makeText(getApplicationContext(), "Buy food and costumes for your pet here", Toast.LENGTH_SHORT);
+        buyingToast.show();
     }
+
 
     public void buyItem(Item item) {
 
         int myCoins = myPet.getCoins();
         int itemCost = item.getCost();
-        if (myCoins >= itemCost) {
+        int level = myPet.getLevel();
+        String itemType = item.getType();
+
+        Toast itemAddedToast;
+        itemAddedToast = Toast.makeText(getApplicationContext(), "You've bought a " + item.getName() + " for your pet", Toast.LENGTH_SHORT);
+
+        if (myCoins >= itemCost && itemType == "Food") {
             myPet.storeItem(item);
             myPet.removeCoins(itemCost);
             tvCoins.setText(TEXT_COINS + myPet.getCoins());
-        }
+            itemAddedToast.show();
 
+        }
+        else if (myCoins >= itemCost && itemType == "Costume" && level >= 10) {
+            myPet.storeItem(item);
+            myPet.removeCoins(itemCost);
+            tvCoins.setText(TEXT_COINS + myPet.getCoins());
+            itemAddedToast.show();
+        }
+        else if (myCoins >= itemCost && itemType == "Costume" && level < 10) {
+            Toast tooLowLevelToast;
+            tooLowLevelToast = Toast.makeText(getApplicationContext(), "Sorry. Your pet needs to be level 10 for you to buy this item!", Toast.LENGTH_SHORT);
+            tooLowLevelToast.show();
+        }
+        else {
+            Toast notEnoughCoinsToast;
+            notEnoughCoinsToast = Toast.makeText(getApplicationContext(), "Sorry. You don't have enough coins to buy this item!", Toast.LENGTH_SHORT);
+            notEnoughCoinsToast.show();
+        }
     }
+
 
     private void changePicture(int bronchiosaurusPic, int trexPic, int triceratopsPic) {
         switch (myPet.getType()) {
