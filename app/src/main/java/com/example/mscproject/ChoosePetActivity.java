@@ -120,7 +120,7 @@ public class ChoosePetActivity extends AppCompatActivity {
                 Intent launchMainActivity = new Intent(ChoosePetActivity.this, MainActivity.class);
                 Bundle bundle = new Bundle();
                 petName = etInputName.getText().toString();
-                Pet myPet = new Pet(500, petName, petType, 0, 0, null, false);
+                Pet myPet = new Pet(0, petName, petType, 0, 0, null, false);
                 dbHelper.addPet(myPet);
                 bundle.putSerializable("MY_PET", myPet);
                 launchMainActivity.putExtras(bundle);

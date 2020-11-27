@@ -27,6 +27,7 @@
     <string name="image_of_the_pet">Image of the pet</string>
     <string name="btn_shop">Shop</string>
     <string name="btn_feed">Feed</string>
+    <string name="main_my_items"><u>My items</u></string>
 
     <!-- Shop page -->
     <string name="shop">Shop</string>
@@ -35,7 +36,9 @@
     <string name="shop_btn_buyApple">BUY</string>
 
     <!-- About page -->
-    <string name="about_tv_text">Jurassic Pets is a mobile application that lets you choose a pet that links to your daily steps.</string>
+    <string name="about_tv_text">
+        Jurassic Pets is a mobile application that lets you choose a pet that you can walk.
+        Earn coins by meeting the step target to buy items for your pet.</string>
 
     <!-- Help page -->
     <string name="help_tv_text">Need help?</string>
@@ -49,6 +52,7 @@
     <string name="shop_rb_item1">Apple</string>
     <string name="shop_rb_item2">Banana</string>
     <string name="shop_tv_itemstText">Items you can buy for your pet:</string>
+
 
 
 </resources>

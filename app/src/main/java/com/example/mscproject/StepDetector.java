@@ -39,7 +39,7 @@ public class StepDetector {
     private StepListener listener;
     // registerListener method with the listener parameter from the StepListener class
     public void registerListener(StepListener listener) {
-        this.listener = listener; //---ASK AL-------------------
+        this.listener = listener;
     }
 
     // updateAccel method: contains 4 variables in its parameter

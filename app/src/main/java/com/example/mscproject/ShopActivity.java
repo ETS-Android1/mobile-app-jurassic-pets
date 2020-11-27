@@ -6,12 +6,16 @@ import android.view.View;
 import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
 
+
 import java.util.List;
 
 public class ShopActivity extends AppCompatActivity {
 
     private TextView tvCoins;
     private ImageView costume;
+
+    private Item selectedItem;
+
 
     private List<Item> item;
     private Pet myPet;
@@ -29,6 +33,9 @@ public class ShopActivity extends AppCompatActivity {
         tvCoins = findViewById(R.id.shop_tv_coins);
         tvCoins.setText(TEXT_COINS + myPet.getCoins());
 
+        RadioGroup itemGroup = findViewById(R.id.shop_rg);
+        itemGroup.setOnCheckedChangeListener(itemSelectedListener);
+
         Button btnBuy = findViewById(R.id.shop_btn_buy);
         btnBuy.setOnClickListener(buy);
 
@@ -42,7 +49,6 @@ public class ShopActivity extends AppCompatActivity {
         buyingToast = Toast.makeText(getApplicationContext(), "Buy food and costumes for your pet here", Toast.LENGTH_SHORT);
         buyingToast.show();
     }
-
 
     public void buyItem(Item item) {
 
@@ -79,7 +85,6 @@ public class ShopActivity extends AppCompatActivity {
         }
     }
 
-
     private void changePicture(int bronchiosaurusPic, int trexPic, int triceratopsPic) {
         switch (myPet.getType()) {
             case Bronchiosaurus:
@@ -94,40 +99,36 @@ public class ShopActivity extends AppCompatActivity {
         }
     }
 
-
-    private final View.OnClickListener buy = new View.OnClickListener() {
+    private final RadioGroup.OnCheckedChangeListener itemSelectedListener = new RadioGroup.OnCheckedChangeListener() {
         @Override
-        public void onClick(View view) {
+        public void onCheckedChanged(RadioGroup radioGroup, int i) {
 
-            RadioGroup itemList = findViewById(R.id.shop_rg);
-            int itemId = itemList.getCheckedRadioButtonId();
+            switch (i) {
 
-            switch (itemId) {
                 case R.id.shop_rb_item1:
-
-                    Item item1 = new Item(1, "Apple", "Food","This is an apple", 100, 10);
-                    buyItem(item1);
-
+                    selectedItem = new Item(1, "Apple", "Food","Feed this to your pet to increase it's level", 100, 10);
                     break;
 
                 case R.id.shop_rb_item2:
-
-                    Item item2 = new Item(2, "Banana", "Food","This is a banana", 200, 20);
-                    buyItem(item2);
-
+                    selectedItem = new Item(2, "Banana", "Food","Feed this to your pet to increase it's level", 200, 20);
                     break;
 
                 case R.id.shop_rb_item3:
-
-                    Item item3 = new Item(2, "Hero outfit", "Costume","This is a super hero outfit for your pet", 800, 0);
-                    buyItem(item3);
-
+                    selectedItem = new Item(2, "Hero outfit", "Costume","This is an outfit for your pet", 800, 0);
                     break;
             }
-
+            Toast itemDescToast;
+            itemDescToast = Toast.makeText(getApplicationContext(), selectedItem.itemToString(), Toast.LENGTH_SHORT);
+            itemDescToast.show();
         }
-
     };
+
+
+    private final View.OnClickListener buy = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) { buyItem(selectedItem); }
+    };
+
 
     View.OnClickListener returnPetItems = new View.OnClickListener() {
         @Override
@@ -139,6 +140,4 @@ public class ShopActivity extends AppCompatActivity {
             startActivity(launchMainActivity);
         }
     };
-
-
 }

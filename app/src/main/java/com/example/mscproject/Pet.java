@@ -2,13 +2,14 @@ package com.example.mscproject;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 
 enum PetType {
-    Triceratops(0),
-    Trex(1),
-    Bronchiosaurus(2);
+        Triceratops(0),
+        Trex(1),
+        Bronchiosaurus(2);
 
     private int petType;
 
@@ -44,6 +45,7 @@ public class Pet implements StepListener, Serializable {
         this.coins = coins;
         this.isAwake = isAwake;
 
+        //Checks to see if the Pet already has an items list
         if (items == null) {
             this.items = new ArrayList<>();
         }
@@ -62,29 +64,37 @@ public class Pet implements StepListener, Serializable {
 
     public int getLevel() { return level; }
 
-    public int getCoins() { return coins; }
-
-    public int getTarget() { return target; }
-
-    public void removeCoins(int cost) { coins = coins - cost; }
-
-    public int getSteps() {return numSteps; }
-
-    public int getHappiness() { return happiness; }
-
     public void levelUp() {
         level++;
         happiness = 0;
     }
 
+    public int getCoins() { return coins; }
+
+    public void removeCoins(int cost) { coins = coins - cost; }
+
+    public int getTarget() { return target; }
+
+    public int getSteps() { return numSteps; }
+
+    public int getHappiness() { return happiness; }
+
+
     public List<Item> getItems() {
         return this.items;
     }
 
-    public void storeItem(Item item) { this.items.add(item); }
+    public void storeItem(Item item) {
+        this.items.add(item); }
 
-    private void removeAllItems() { this.items.clear(); }
 
+    public void wakeUp() {
+        this.isAwake = true;
+    }
+
+    public boolean getIsAwake() {
+        return isAwake;
+    }
 
     @Override
     public void step(long timeNs) {
@@ -100,18 +110,14 @@ public class Pet implements StepListener, Serializable {
     }
 
     public void feed() {
-        for (Item i : items) {
-            increaseHappiness(i.getPoints());
+        Iterator<Item> itemIterator = items.iterator();
+        while (itemIterator.hasNext()) {
+            Item item = itemIterator.next();
+            if (item.getType().equals("Food")) {
+                increaseHappiness(item.getPoints());
+                itemIterator.remove();
+            }
         }
-        removeAllItems();
-    }
-
-    public void wakeUp() {
-        this.isAwake = true;
-    }
-
-    public boolean getIsAwake() {
-        return isAwake;
     }
 
     public void storeId(int id) {

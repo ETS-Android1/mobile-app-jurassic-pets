@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         tvTarget = findViewById(R.id.main_tv_target);
         tvCoins = findViewById(R.id.main_tv_coins);
         tvLevel = findViewById(R.id.main_tv_level);
-        pbHappiness = findViewById(R.id.main_pb_hapiness);
+        pbHappiness = findViewById(R.id.main_pb_happiness);
         pbHappiness.setProgress(myPet.getHappiness());
 
         final Button btnWakeUp = findViewById(R.id.main_btn_start);
@@ -131,6 +131,9 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
                 if (petHappiness == 100) {
                     myPet.levelUp();
+                    Toast levelUpToast;
+                    levelUpToast = Toast.makeText(getApplicationContext(), "Your pet is now level " + myPet.getLevel(), Toast.LENGTH_SHORT);
+                    levelUpToast.show();
                     pbHappiness.setProgress(0);
                 }
                 DatabaseHelper dbHelper = new DatabaseHelper(MainActivity.this);

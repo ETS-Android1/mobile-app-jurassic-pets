@@ -22,16 +22,16 @@ public class Item implements Serializable {
 
     public int getCost() { return this.cost; }
 
-    public int getPoints() { return this.points; }
-
     public String getType() { return this.type; }
+
+    public int getPoints() { return this.points; }
 
     public String getName() { return this.name; }
 
     public String itemToString() {
-        return "Item: " + name +
-                "Description: " + description +
-                "Cost: " + cost;
+        return "Item: " + this.name + "\n" +
+                "Description: " + this.description + "\n" +
+                "Cost: " + this.cost;
     }
 }
 
